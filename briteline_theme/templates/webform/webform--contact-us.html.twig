@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Theme implementation for contact us webform.
+#}
+<script>
+    var latitude;
+    var longitude;
+    function initMap() {
+        var image = '../themes/custom/briteline_theme/assets/images/map-icon.svg';
+        var location = {lat: 32.950901, lng: -80.213145};
+        var setmaplocation = {lat: 33.290901, lng: -81.313145}
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: setmaplocation
+        });
+
+        var contentString = '<div class="info-map">'+
+            '<div class="info-map__loc">Briteline Extrusions,Inc</div>'+
+            '<div class="info-map__desc">575 Beech Hill Road, Summerville, SC 29485</div>'+
+            '<div class="info-map__dir"><a href="https://www.google.com/maps?daddr=32.950901,-80.213145" target="_blank">Get Directions</a></div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'Briteline Extrusions, Inc',
+            icon: image
+        });
+        marker.addListener('mouseover', function() {
+            infowindow.open(map, marker);
+        });
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+    }
+
+</script>
+
+<form {{ attributes }}>
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  <div class="weform--contact-us layout-container">
+    <span class="close-icon"></span>
+    <div class="weform--contact-us__left" id="map">
+      <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALaQ-NxOLWORPwZLxGDn_1dJhMluBvDT4&callback=initMap">
+      </script>
+    </div>
+    <div class="weform--contact-us__right">
+      {{ element }}
+    </div>
+  </div>
+</form>

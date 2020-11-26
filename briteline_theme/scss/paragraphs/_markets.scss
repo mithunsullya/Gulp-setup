@@ -1,0 +1,58 @@
+.markets-wrapper {
+  padding: 50px 20px 40px 20px;
+  @include media-breakpoint-up(lg) {
+    padding: 80px 20px 80px 20px;
+  }
+  .markets-title {
+    font:$font-size--title-mob $font--medium;
+    letter-spacing: 0;
+    color: $color--primary;
+    padding-bottom: 10px;
+    @include media-breakpoint-up(lg) {
+      font:$font-size--title $font--medium;
+      padding-bottom: 30px;
+      padding-left: 0;
+    }
+  }
+  .markets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .market-content {
+      flex:0 0 100%;
+      padding-bottom: 0;
+      @include media-breakpoint-up(md) {
+        flex:0 0 47%;
+      }
+      @include media-breakpoint-up(lg) {
+        flex:0 0 23%;
+      }
+      .image {
+        width: 100px;
+        height: 96px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        background-size: cover;
+        margin-bottom: 10px;
+      }
+      .title {
+        font: $font-size--xl $font--medium;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(lg) {
+          font: $font-size--lg $font--medium;
+        }
+      }
+      .description {
+        font:$font-size--base $font--regular;
+        color: $color--secondary;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(lg) {
+          font:$font-size--l $font--regular;
+        }
+      }
+    }
+  }
+}

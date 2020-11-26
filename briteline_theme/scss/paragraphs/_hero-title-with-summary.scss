@@ -1,0 +1,44 @@
+//hero section global styling
+.hero-section {
+  max-width: 1248px;
+  margin: auto;
+  width:100%;
+  padding: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  @include media-breakpoint-up(md) {
+    width:70%;
+    padding: 100px 0;
+  }
+  &__title {
+    font:$font-size--title-mob $font--bold;
+    letter-spacing: 0;
+    color: $color--primary;
+    flex: 0 0 100%;
+    @include media-breakpoint-up(lg) {
+      font:$font-size--title $font--bold;
+      flex: 0 0 33.3%;
+    }
+    @media ($bp-larger-than-mobile) {
+      font:$font-size--title $font--bold;
+    }
+    @include media-breakpoint-up(xl) {
+      flex: 0 0 29%;
+      padding-left: 10px;
+    }
+  }
+  &__summary {
+    font:$font-size--base $font--regular;
+    letter-spacing: 0;
+    line-height: 32px;
+    color: $color--secondary;
+    flex: 0 0 100%;
+    @include media-breakpoint-up(lg) {
+      font:$font-size--xl $font--regular;
+      flex: 0 0 66.6%;
+    }
+    @include media-breakpoint-up(xl) {
+      flex: 0 0 71%;
+    }
+  }
+}

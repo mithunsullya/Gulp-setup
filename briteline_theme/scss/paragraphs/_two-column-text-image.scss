@@ -1,0 +1,76 @@
+.two-column-text-image-wrapper {
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    color: $color--white;
+    padding: 20px 20px 20px 20px;
+    @include media-breakpoint-up(lg) {
+      padding: 40px;
+    }
+    &__left {
+      flex:0 0 100%;
+      padding:0;
+      @include media-breakpoint-up(lg) {
+        flex:0 0 50%;
+        padding: 40px 80px 40px 0;
+      }
+      .title {
+        font:$font-size--title-mob $font--bold;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+        @include media-breakpoint-up(lg) {
+          font:$font-size--title $font--bold;
+        }
+      }
+      .description {
+        margin-bottom: 10px;
+        font: $font-size--xl $font--regular;
+        line-height: 1.5;
+        @include media-breakpoint-up(lg) {
+          font: $font-size--l $font--regular;
+        }
+      }
+    }
+    &__right {
+      flex:0 0 100%;
+      padding: 10px;
+      font: $font-size--xl $font--regular;
+      line-height: 1.5;
+      background-color: $color--background-hover;
+      opacity: 0.8;
+      @include media-breakpoint-up(lg) {
+        flex:0 0 50%;
+        padding: 40px 30px;
+      }
+      ul {
+        padding: 0 0 0 30px;
+        position: relative;
+        li {
+          padding-bottom: 10px;
+          text-indent: unset;
+          padding-left: 30px;
+          font: $font-size--l $font--medium;
+          @include media-breakpoint-up(lg) {
+            font: $font-size--xl $font--medium;
+          }
+          &:before {
+            content: '\e908';
+            font-size: $font-size--l;
+            font-family: 'icomoon';
+            color: $color--white;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            @include media-breakpoint-up(lg) {
+              font-size: $font-size--xl;
+            }
+          }
+        }
+      }
+    }
+  }
+}

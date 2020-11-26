@@ -1,0 +1,9 @@
+{#
+/**
+* @file
+* Template override for tags taxonomy.
+*/
+#}
+{% if content.description|render|striptags %}
+  {{ content.description }}
+{% endif %}

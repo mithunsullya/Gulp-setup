@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme implementation for current job opportunities webform.
+#}
+
+{% set classes = [
+  'webform',
+  'webform--current-job-opening',
+] %}
+
+<form {{ attributes }} id="career-pop-up">
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  <div class="webform--opportunities">
+    <span class="close-icon"></span>
+    <div class="webform--opportunities__left">
+    </div>
+    <div class="webform--opportunities__right">
+      {{ element }}
+    </div>
+  </div>
+</form>

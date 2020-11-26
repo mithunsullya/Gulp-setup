@@ -1,0 +1,38 @@
+<div class="jobs--details-wrapper">
+  <div class="jobs-content-wrapper">
+    <div class="title">{{ label }}</div>
+    <div class="link"><a class="button button--cta button--link" href="/employee-application">
+        Apply Now
+      </a></div>
+    {% if content.field_job_location|render|striptags %}
+    <div class="main-content location">
+      <div class="loc-label">LOCATION</div>
+      {{ content.field_job_location }}
+    </div>
+    {% endif %}
+    {% if content.field_job_description|render|striptags %}
+    <div class="main-content description">
+      <div class="main-content-title">Description</div>
+      {{ content.field_job_description }}
+    </div>
+    {% endif %}
+    {% if content.field_job_requirements|render|striptags %}
+    <div class="main-content requirements">
+      <div class="main-content-title">Requirement</div>
+      {{ content.field_job_requirements }}
+    </div>
+    {% endif %}
+    {% if content.field_job_skills|render|striptags %}
+    <div class="main-content skills">
+      <div class="main-content-title">Job Skills</div>
+      {{ content.field_job_skills }}
+    </div>
+    {% endif %}
+    <div class="link-desktop"><a class="button button--cta button--link" href="/employee-application">
+        Apply Now
+      </a>
+    </div>
+  </div>
+</div>
+
+

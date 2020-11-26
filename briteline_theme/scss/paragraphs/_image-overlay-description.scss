@@ -1,0 +1,74 @@
+.image-overlay-description {
+  position: relative;
+  background: $color--aqua-light;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+
+  }
+
+  &__image {
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      width: 70%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include media-breakpoint-up(md) {
+        height: 450px;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 520px;
+      }
+      @include media-breakpoint-up(xl) {
+        height: 620px;
+      }
+      @media screen and (min-width: 1600px) {
+        height: 800px;
+      }
+    }
+  }
+
+  a {
+    width: 100%;
+    display: block;
+  }
+
+  &__content {
+    @include media-breakpoint-only(lg) {
+      max-width: 380px !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      top: 50%;
+      right: -330px;
+      left: auto;
+      max-width: 400px;
+      padding: 50px 36px 50px 36px ;
+      transform: translateY(-50%);
+    }
+
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    transform: none;
+    background: $white;
+  }
+}
+
+.content__description {
+  color: $color--primary;
+  font: $font-size--base $font--medium;
+  line-height: 1.5;
+  @include media-breakpoint-up(lg) {
+    font: $font-size--xl $font--medium;
+  }
+}

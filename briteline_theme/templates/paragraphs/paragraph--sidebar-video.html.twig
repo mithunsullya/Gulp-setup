@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the video with text paragraphs.
+ */
+#}
+
+{% if paragraph.field_media_size.value == "1" %}
+  {% if paragraph.field_media_side.value == "0" %}
+    {% set paragraph_classes = ["paragraph__sidebar-medium", "paragraph__sidebar-media", "paragraph__sidebar-media-left"] %}
+  {% else %}
+    {% set paragraph_classes = ["paragraph__sidebar-medium","paragraph__sidebar-media", "paragraph__sidebar-media-right"] %}
+  {% endif %}
+{% elseif paragraph.field_media_size.value == "0" %}
+  {% if paragraph.field_media_side.value == "1" %}
+    {% set paragraph_classes = ["paragraph__sidebar-small", "paragraph__sidebar-media", "paragraph__sidebar-media-left"] %}
+  {% else %}
+    {% set paragraph_classes = ["paragraph__sidebar-small", "paragraph__sidebar-media", "paragraph__sidebar-media-right"] %}
+  {% endif %}
+{% else %}
+  {% set paragraph_classes = [ "paragraph__sidebar-full" ] %}
+{% endif %}
+
+<div class = "media-wrapper layout-container">
+  <div{{ attributes.setattribute('class', paragraph_classes) }}>
+    <div class="sidebar-media__embed">
+      <div class="sidebar-media__image">
+      {{ content.field_video }}
+      </div>
+    </div>
+    <div class="sidebar-media__content">
+      {% if content.field_title|render|trim is not empty %}
+        <h3 class="content__title">
+          {{ content.field_title }}
+        </h3>
+      {% endif %}
+
+      <div class="content__text">
+        {{ content.field_description }}
+      </div>
+      {% if content.field_link|render|trim is not empty %}
+        <button class="button button--link">
+          {{ content.field_link }}
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>

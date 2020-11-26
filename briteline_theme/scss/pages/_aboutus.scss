@@ -1,0 +1,503 @@
+.about-us {
+
+
+  .two-column-text-image-wrapper {
+    .content__right {
+      ul {
+        padding:0 !important;
+      }
+    }
+  }
+
+  .sidebar-image-wrapper {
+    margin: 20px auto;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+      margin: 40px auto;
+    }
+    .paragraph__sidebar-media-right {
+      .sidebar-media__embed {
+        flex: 0 0 100%;
+        @include media-breakpoint-up(md) {
+
+        }
+        @include media-breakpoint-up(lg) {
+          flex: 0 0 33.33%;
+        }
+        .sidebar-media__image {
+          padding: 0 !important;
+          .field-media-image {
+            @include media-breakpoint-up(md) {
+              width:100%;
+            }
+          }
+          @include media-breakpoint-up(lg) {
+            padding: 0 50px;
+          }
+          img {
+            @include media-breakpoint-up(lg) {
+              height: 500px !important;
+            }
+          }
+        }
+      }
+      .sidebar-media__content {
+        flex: 0 0 100%;
+        //height: 440px !important;
+        background: $color--background-hover;
+        padding: 10px;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+        color: $color--white;
+        @include media-breakpoint-up(lg) {
+          height: 500px !important;
+          flex: 0 0 66.66%;
+          padding: 30px 100px 40px 40px;
+        }
+        .content__title {
+          color: $color--white;
+        }
+        .content__text {
+          color: $color--white;
+          font: $font-size--l $font--medium;
+        }
+
+        .button--link {
+          background-color: $color--white;
+          color:$color--background-hover;
+          &:hover {
+            color:$color--button--hover;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-image-bg {
+    background-color: $color--aqua-light;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+  .field-content {
+    > div {
+      &:nth-child(3) {
+        background-color: $color--white;
+      }
+    }
+  }
+}
+
+
+.team-list-teaser-wrapper, .team-list {
+  padding: 10px 0;
+  background-color: $color--aqua-light;
+  position: relative;
+  @include media-breakpoint-up(lg) {
+    padding: 30px 0 40px 0;
+  }
+  .view-header {
+    padding: 0 20px 0 20px;
+    @include media-breakpoint-up(lg) {
+      max-width: 1248px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    .team-title {
+      font:$font-size--title-mob $font--medium;
+      letter-spacing: 0;
+      color: $color--primary;
+      @include media-breakpoint-up(lg) {
+        font:$font-size--title $font--medium;
+      }
+    }
+  }
+  .view-footer {
+    padding: 0 20px;
+    text-align: right;
+    @include media-breakpoint-up(lg) {
+      max-width: 1248px;
+      margin: auto;
+      padding: 20px 20px 0 0;
+    }
+    a {
+      color: $color--primary;
+      font: $font-size--s $font--bold;
+      &:after {
+        content: '\e913';
+        font-size: $font-size--s;
+        padding-left: 10px;
+        font-family: 'icomoon';
+        color: $color--more-link;
+        font-weight: bold;
+      }
+    }
+  }
+  .view-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px 20px;
+    @include media-breakpoint-up(lg) {
+      max-width: 1248px;
+      margin: auto;
+      padding:0 20px;
+    }
+    .views-row {
+      flex:0 0 48%;
+      padding-bottom: 10px;
+      text-align: center;
+      @include media-breakpoint-up(lg) {
+        flex:0 0 23.5%;
+        padding-bottom: 0;
+        text-align: left;
+      }
+      .member__picture {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .edit {
+          display: none;
+          position: absolute;
+          top: 5px;
+          right: 10px;
+          a {
+              font-size: 0;
+            &:before {
+              content: '';
+              display: inline-block;
+              height: 26px;
+              width: 26px;
+              background-image: url("../assets/images/pencil.svg");
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: 16px 16px;
+              padding: 0 2px;
+              cursor: pointer;
+              border: 1px solid $color--pencil-bg;
+              border-radius: 13px;
+              background-color: $color--white;
+              background-attachment: scroll;
+            }
+          }
+        }
+        &:hover {
+          .edit {
+            display: block;
+          }
+        }
+      }
+      .team-member {
+          min-height: 105px;
+          &__name {
+            font:$font-size--l $font--medium;
+            letter-spacing: 0;
+            line-height: 1.5;
+            @include media-breakpoint-up(md) {
+              font:$font-size--xl $font--medium;
+              line-height: 1.5;
+            }
+            @include media-breakpoint-up(lg) {
+              font:$font-size--xxl $font--medium;
+              line-height: 1.5;
+            }
+          }
+          &__designation {
+            font:$font-size--s $font--regular ;
+            letter-spacing: 0;
+            line-height: 1.5;
+            color: $color--secondary;
+            @include media-breakpoint-up(md) {
+              font:$font-size--base $font--regular;
+              line-height: 1.5;
+            }
+            @include media-breakpoint-up(lg) {
+              font:$font-size--base $font--regular;
+              line-height: 1.5;
+            }
+          }
+          &__experience {
+            font:$font-size--xs $font--regular;
+            letter-spacing: 0;
+            line-height: 1.5;
+            color: $color--grey--light;
+            @include media-breakpoint-up(md) {
+              font:$font-size--s $font--regular;
+              line-height: 1.5;
+            }
+            @include media-breakpoint-up(lg) {
+              font:$font-size--xs $font--regular;
+              line-height: 1.5;
+            }
+          }
+        }
+        .member__link {
+        margin-top: 10px;
+        a {
+          color: $color--background-hover;
+          background-color: $color--white;
+          font:$font-size--xs $font--bold;
+          padding: 8px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          @include media-breakpoint-up(md) {
+            font:$font-size--s $font--bold;
+            line-height: 1.5;
+          }
+          @include media-breakpoint-up(lg) {
+            font:$font-size--s $font--bold;
+            line-height: 1.5;
+            padding: 10px;
+          }
+          }
+          .contact-info {
+            padding-left: 0;
+            margin-top: 10px;
+            display:block;
+            font:$font-size--xs $font--regular ;
+            letter-spacing: 0;
+            color: $color--secondary;
+            @include media-breakpoint-up(up) {
+              font:$font-size--s $font--regular;
+              line-height: 1.5;
+            }
+            @include media-breakpoint-up(lg) {
+              font:$font-size--xs $font--regular;
+              line-height: 1.5;
+              margin-top: 0;
+              display:inline-block;
+              padding-left: 0;
+            }
+            @include media-breakpoint-up(xl) {
+              font:$font-size--s $font--regular;
+              line-height: 1.5;
+              padding-left: 10px;
+            }
+          }
+        }
+      .team__content {
+        background: $color--white;
+        padding: 10px 0;
+        @include media-breakpoint-up(lg) {
+          padding: 20px;
+        }
+      }
+      &:hover {
+        .team__content {
+          background: $color--background-hover;
+          color: white;
+          transition: 0.25s all ease-in-out;
+          .team-member__designation,.team-member__experience, .contact-info {
+            color: $color--white;
+          }
+        }
+        .member__link a {
+          background: $color--white;
+          color: $color--button--hover;
+        }
+      }
+      }
+    }
+  }
+.team-list{
+  padding-top: 0;
+  padding-bottom: 0;
+  .view-content {
+    justify-content: space-between;
+    padding: 50px 20px;
+    @include media-breakpoint-up(lg) {
+      justify-content: center;
+      padding: 80px 20px 50px 20px;
+    }
+    .views-row {
+      flex: 0 0 48%;
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 25%;
+        max-width: calc(25% - 27px);
+        margin-right: 36px;
+        padding-bottom: 36px;
+
+        &:nth-child(4n+4),&:last-child {
+          margin-right: 0;
+        }
+      }
+      .team__content {
+        min-height: 190px;
+        @include media-breakpoint-up(xl) {
+          min-height: auto;
+        }
+      }
+      .team-member {
+        min-height: 70px;
+      }
+    }
+  }
+  .view-header {
+    background-color: $color--white;
+    max-width: 100% !important;
+    padding: 0;
+  }
+}
+
+
+.aboutus-hero-section {
+  margin: auto;
+  width:100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  @include media-breakpoint-up(lg) {
+    max-width: 1248px;
+    padding: 100px 40px;
+  }
+  &__title {
+    font:$font-size--title-mob $font--bold;
+    letter-spacing: 0;
+    color: $color--primary;
+    flex: 0 0 100%;
+    @include media-breakpoint-up(lg) {
+      font:$font-size--title $font--bold;
+      flex: 0 0 40%;
+    }
+  }
+  &__summary {
+    font:$font-size--l $font--regular;
+    letter-spacing: 0;
+    line-height: 32px;
+    color: $color--secondary;
+    flex: 0 0 100%;
+    @include media-breakpoint-up(lg) {
+      font:$font-size--xl $font--regular;
+    }
+  }
+}
+
+
+.webform--contact-team {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 20px 50px 20px;
+  position: relative;
+  @include media-breakpoint-up(lg) {
+    height: 100%;
+    padding: 40px 40px 60px 40px;
+  }
+  &__content {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(lg) {
+      height: 100%;
+    }
+    .form-item {
+      flex: 0 0 100%;
+      margin-top: 0;
+      margin-bottom: 10px;
+      > h2 {
+        font:$font-size--xxl $font--medium;
+      }
+    }
+    .form-item-webform-description, .form-item-email, .form-item-message {
+      .title {
+        line-height: 1.3;
+      }
+    }
+    .form-item-f-name,.form-item-l-name,.form-item-phone-number,.form-item-email-id, .form-item-company-name {
+      flex: 0 0 100%;
+      @include media-breakpoint-up(lg) {
+        flex: 0 0 50%;
+      }
+    }
+    .form-item-attachment {
+      flex: 0 0 50%;
+      input {
+        height: 60px;
+        padding: 15px;
+      }
+      input[value="Remove"] {
+        width: 67px;
+        height: 36px;
+        font: $font-size--xs $font--medium;
+        padding: 10px;
+        margin-right: 0;
+      }
+    }
+    .form-item-form-title {
+      margin-bottom: 0;
+    }
+    .form-item-f-name,.form-item-phone-number, .form-item-company-name {
+      input {
+        @include media-breakpoint-up(lg) {
+          max-width: calc(100% - 30px);
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  .close-icon {
+    display: inline-block;
+    background-image: url("../assets/images/close.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    @include media-breakpoint-up(lg) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+}
+
+  .ui-dialog {
+    position: relative;
+    @include media-breakpoint-up(md) {
+      width: 63% !important;
+    }
+  }
+
+  .ui-dialog-buttonpane {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 0;
+      left:0;
+    }
+    left:0;
+    button {
+      margin-left: 20px !important;
+      background:$color--background-hover;
+      color: $color--white;
+      padding: 10px;
+      font:$font-size--xs $font--medium;
+      width: 100px;
+      @include media-breakpoint-up(lg) {
+        margin: 10px 0 10px 40px !important;
+      }
+      &:hover {
+        background:$color--button--hover;
+        color: $color--white;
+        border: none !important;
+      }
+    }
+  }
+
+  .about-us {
+    @media (min-width: 1218px) and (max-width: 1248px) {
+      .sidebar-media__content {
+        .content__text {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }

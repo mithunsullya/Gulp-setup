@@ -1,0 +1,50 @@
+.error-page-wrapper {
+  padding: 40px 0;
+  @include media-breakpoint-up(lg) {
+    padding: 100px 0;
+  }
+  .error-content {
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    @include media-breakpoint-up(lg) {
+      max-width: 580px;
+    }
+    .image {
+      background-image: url("../assets/images/404.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 210px;
+      @include media-breakpoint-up(md) {
+        height: 400px;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: 100%;
+        margin: auto;
+      }
+    }
+    h2 {
+      font: $font-size--title-medium $font--medium;
+      letter-spacing: 0;
+      color:$color--primary;
+    }
+    p {
+      font: $font-size--l $font--regular;
+      letter-spacing: 0.36px;
+      color: $color--error-desc;
+      padding-bottom: 10px;
+      a {
+        color: $color--white;
+        background-color: $color--background-hover;
+        border-radius: 5px;
+        text-transform: uppercase;
+        border: 0;
+        padding: 15px;
+        font: $font-size--xs $font--bold;
+        &:hover {
+          background-color: $color--button--hover;
+        }
+      }
+    }
+  }
+}

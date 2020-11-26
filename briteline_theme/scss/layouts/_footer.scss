@@ -1,0 +1,187 @@
+// Site footer styling.
+
+.site-footer {
+  background-color: $color--footer;
+
+  @include media-breakpoint-only(md) {
+    padding: 0 20px;
+  }
+
+  .block-region {
+    width: 100%;
+  }
+
+  &__footer-first {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__footer-second {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.site-footer {
+  &__footer-third {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__bottom {
+    padding-bottom: 20px;
+
+    @include media-breakpoint-only(lg) {
+      padding-bottom: 20px;
+      padding: 0 20px 80px;
+    }
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (orientation: landscape) {
+      padding-bottom: 0 !important;
+    }
+
+    .region-footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      @include media-breakpoint-up(md) {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+    }
+  }
+}
+//Britline Css
+
+.region-footer-second {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    @media ($bp-larger-than-tablet) {
+      margin-left: auto;
+    }
+    .menu-item {
+      flex: 0 0 50%;
+      font-size: $font-size--base;
+      font-weight: $font--regular;
+      margin-bottom: 15px;
+      a {
+        color: $color--link;
+        text-decoration: none;
+      }
+      &:last-child {
+        text-shadow: 0 0 15px rgba(255,255,255,.5),0 0 10px rgba(255,255,255,.5);
+        font-weight: 600;
+        a {
+          color: rgba(255,255,255,0.9);
+          letter-spacing: 1.2px;
+        }
+      }
+    }
+  }
+}
+
+.footer__container {
+  @include media-breakpoint-up(lg) {
+    padding-top: 50px;
+    }
+}
+
+.footer__address {
+    flex: 0 1 100%;
+    margin-top: 20px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 0;
+      flex: 0 1 25%;
+    }
+
+    .footer-address {
+      color: $color--white;
+
+      h4 {
+        font: $font-size--base $font--medium;
+      }
+
+      p {
+        font: $font-size--base $font--regular;
+        line-height: 28px;
+      }
+    }
+
+    hr {
+      width: 50px;
+      border-color: $color--background-hover;
+      text-align: left;
+      margin: 30px 0;
+    }
+
+    .footer-contact {
+      >div {
+        margin-top: 10px;
+      }
+
+      span {
+        color: $color--white;
+        font: $font-size--base $font--medium;
+      }
+
+      a {
+        color: $color--link;
+        font: $font-size--base $font--regular;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer__info {
+      flex: 0 1 65%;
+      max-width: 65%;
+      margin: auto;
+      @include media-breakpoint-up(lg) {
+        flex: 0 1 25%;
+        max-width: 100%;
+        img {
+          width: 245px;
+          height: auto;
+        }
+      }
+      @media ($bp-larger-than-tablet) {
+        @media ($bp-smaller-than-desktop) {
+          img {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .footer__members {
+      h5 {
+        font: $font-size--s $font--medium;
+        color: $color--link;
+        margin-top: 35px;
+      }
+
+      .footer__media {
+        img {
+          margin-top: 20px;
+          margin-right: 10px;
+
+          @include media-breakpoint-up(lg) {
+            margin-right: 0;
+          }
+        }
+      }
+    }

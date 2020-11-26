@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="78.5" height="68" viewBox="0 0 78.5 68">
+  <g id="Group_4341" data-name="Group 4341" transform="translate(-948 -2535)">
+    <rect id="Rectangle_1033" data-name="Rectangle 1033" width="62" height="61" rx="30.5" transform="translate(948 2542)" fill="#eff4f7"/>
+    <g id="cropping-tool" transform="translate(965 2535)">
+      <path id="Path_3577" data-name="Path 3577" d="M59.45,46.591H50.691V13.708l7.037-7.037a2.05,2.05,0,0,0-2.9-2.9l-7.037,7.037H14.909V2.05a2.05,2.05,0,1,0-4.1,0v8.759H2.05a2.05,2.05,0,1,0,0,4.1h8.759V48.641a2.05,2.05,0,0,0,2.05,2.05H46.591V59.45a2.05,2.05,0,1,0,4.1,0V50.691H59.45a2.05,2.05,0,1,0,0-4.1ZM43.692,14.909,14.909,43.692V14.909ZM17.808,46.591,46.591,17.808V46.591Z" fill="#1e85e8"/>
+    </g>
+  </g>
+</svg>

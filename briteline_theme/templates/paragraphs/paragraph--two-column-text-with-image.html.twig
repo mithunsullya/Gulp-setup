@@ -1,0 +1,13 @@
+
+<div class="two-column-text-image-wrapper" style="background-image: url('{{ file_url(paragraph.field_image.entity.field_media_image.entity.fileuri) }}')">
+  <div class="content layout-container">
+    <div class="content__left">
+      <div class="title">{{ content.field_title }}</div>
+      <div class="description"> {{ content.field_left_content }}</div>
+    </div>
+    <div class="content__right">
+      {{ content.field_right_content }}
+    </div>
+  </div>
+</div>
+

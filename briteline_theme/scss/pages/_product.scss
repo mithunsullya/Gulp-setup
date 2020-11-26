@@ -1,0 +1,99 @@
+.product__detail {
+  .product__title {
+    font: $font-size--title $font--bold;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 80px 0 50px;
+  }
+  .track-dies-section {
+    background: $color--background;
+    padding: 80px 0;
+
+    @include media-breakpoint-up(lg) {
+      padding: 80px 0;
+    }
+
+     .field-product-images {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+      }
+    }
+    .track-dies__item {
+      flex: 0 1 100%;
+      text-align: center;
+      background: $color--white;
+      position: relative;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      @media ($bp-larger-than-mobile) {
+        @media ($bp-smaller-than-tablet) {
+          flex: 0 1 48%;
+          margin-right: 22px;
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        flex: 0 1 30%;
+        margin-right: 35px;
+        &:nth-child(2n) {
+          margin-right: 35px;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+
+      @include media-breakpoint-up(xl) {
+        flex: 0 1 31%;
+      }
+
+      &:hover {
+        &:before {
+          content: '';
+          background: $color--hover;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 0.8;
+        }
+
+        .track-dies__action {
+          display: block;
+        }
+      }
+    }
+    .track-dies__image {
+      img {
+        width: 100%;
+      }
+    }
+
+    .track-dies__action {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      a {
+        text-decoration: none;
+        font-size: $font-size--xxs;
+        @include media-breakpoint-up(md) {
+          font-size: $font-size--xs;
+        }
+        @include media-breakpoint-up(xl) {
+          font-size: $font-size--s;
+        }
+      }
+    }
+  }
+}

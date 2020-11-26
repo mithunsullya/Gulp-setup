@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Basic page layout for GSH node page.
+ */
+#}
+
+{% extends "page.html.twig" %}
+
+{% block page %}
+<div class="login-page">
+  <div id="page-wrapper">
+    <div id="page">
+      <header id="header" class="header" role="banner"
+              aria-label="{{ 'Site header'|t }}">
+        <div class="header__container">
+          <div class="layout-container">
+            <div class="row">
+              <div class="col-10 col-md-11 col-lg-2 header__branding">
+                {{ page.branding }}
+              </div>
+              <div class="col-7  col-lg-7 header__top-menu d-none d-xlg-block">
+                {{ page.top_menu }}
+              </div>
+              <div class="col-2 col-lg-3 header__top-contact d-none d-xlg-block">
+                {{ page.top_contact }}
+              </div>
+              <div class="col-2 col-md-1  header__mobile-hamburger d-xlg-none d-xl-none">
+                <a href="javascript:void(0)"><i class="icon icon-menu"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="header__navigation-mobile mobile-display">
+            {{ page.mobile_navigation }}
+          </div>
+        </div>
+      </header>
+      {% block content %}
+        <div class="layout-main-wrapper" id="main">
+          <main class="main-content" id="content" role="main">
+            <a id="main-content" tabindex="-1"></a>
+            {{ page.content }}
+          </main>
+        </div>
+      {% endblock %}
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer__container layout-container">
+          <div class="row">
+            {% if page.footer_first %}
+              <div class="col-md-12 col-lg-3 site-footer__footer-first">
+                {{ page.footer_first }}
+              </div>
+            {% endif %}
+            {% if page.footer_second %}
+              <div class="col-md-6 col-lg-6 site-footer__footer-second">
+                {{ page.footer_second }}
+              </div>
+            {% endif %}
+            {% if page.footer_third %}
+              <div class="col-md-6 col-lg-3 site-footer__footer-third">
+                {{ page.footer_third }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="layout-container">
+        {% if page.footer_bottom %}
+          <div class="site-footer__bottom">
+            {{ page.footer_bottom }}
+          </div>
+        {% endif %}
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+{% endblock %}

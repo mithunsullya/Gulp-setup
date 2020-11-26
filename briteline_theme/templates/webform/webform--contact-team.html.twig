@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Theme implementation for contact-team webform.
+#}
+
+{% set classes = [
+  'webform',
+  'webform--contact-team-wrapper',
+] %}
+
+<form {{ attributes }} id="career-pop-up">
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+  <div class="webform--contact-team">
+    <span class="close-icon"></span>
+    <div class="webform--contact-team__content">
+      {{ element }}
+    </div>
+  </div>
+</form>

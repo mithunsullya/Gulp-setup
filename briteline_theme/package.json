@@ -1,0 +1,26 @@
+{
+  "name": "briteline",
+  "version": "1.0.0",
+  "description": "Briteline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "briteline"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "gulp": "3.9.0",
+    "gulp-sass": "^4.0.2",
+    "owl.carousel2": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "sass-lint": "^1.12.1",
+    "gulp-sass-lint": "^1.4.0"
+  }
+}

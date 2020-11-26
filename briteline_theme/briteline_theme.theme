@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Theme settings.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block_content\BlockContentInterface;
+
+/**
+ * {@inheritdoc}
+ */
+function briteline_theme_theme_suggestions_block_alter(&$suggestions, $variables) {
+  $content = $variables['elements']['content'];
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
+    $suggestions[] = 'block__' . $content['#block_content']->bundle();
+  }
+}
+
+/**
+ * {@inheritdoc}
+ */
+function briteline_theme_theme_suggestions_taxonomy_term_alter(array &$suggestions, array $variables) {
+  $term = $variables['elements']['#taxonomy_term'];
+  $name = $term->getName();
+  $suggestions[] = 'taxonomy__term__' . $name;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function briteline_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Set default value for webform.
+  if ($form_id == 'webform_submission_contact_team_add_form' && $name = \Drupal::request()->query->get('name')) {
+    if (isset($form['elements']['to'])) {
+      if ($form['elements']['to']['#default_value'] == NULL) {
+        $form['elements']['to']['#default_value'] = $name;
+      }
+    }
+  }
+}

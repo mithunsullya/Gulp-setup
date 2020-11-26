@@ -1,0 +1,53 @@
+// /* ==========================================================================
+//    Button
+//    ========================================================================== */
+// /**/
+// /* ==========================================================================
+//    Button
+//    ========================================================================== */
+// /**/
+button,
+.button {
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 0;
+  padding: 15px;
+  font: $font-size--xs $font--bold;
+
+  @include media-breakpoint-up(md) {
+    font: $font-size--s $font--bold;
+  }
+
+  &.button--cta {
+    background: $color--background-hover;
+    color: $color--white;
+
+    &:hover {
+      background: $color--button--hover;
+    }
+  }
+
+  &.button--reverse {
+    color: $color--background-hover;
+    background: $color--white;
+  }
+
+  &.button--link {
+    background: $color--background-hover;
+    color: $color--white;
+
+    &:hover {
+      background: $color--button--hover;
+    }
+  }
+
+  &.button--contact {
+    color: $color--white !important;
+    background: $color--background-hover;
+    padding: 15px 25px !important;
+
+    &:hover {
+      background: $color--button--hover;
+    }
+  }
+}

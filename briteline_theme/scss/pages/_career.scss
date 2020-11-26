@@ -1,0 +1,631 @@
+
+.explore-opportunity-wrapper {
+ background-color: $color--aqua-light;
+  padding:50px 0;
+  @include media-breakpoint-up(lg) {
+    padding:80px 0;
+  }
+.block-views-blockexplore-the-opportunities-block-1 {
+  margin: auto;
+  @include media-breakpoint-up(lg) {
+    width: 50%;
+    padding: 0;
+  }
+  width: 100%;
+  padding: 0 10px;
+
+  > h2 {
+    font-size: $font-size--title-medium;
+    margin-bottom: 20px;
+  }
+
+  .views-row {
+    border-bottom: 1px solid $color--white;
+     a {
+    .jobs-wrapper {
+      padding: 10px;
+      position: relative;
+      background-color: $color--background-hover;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $color--contact-hover;
+      }
+
+      .job-title {
+        color: $color--white;
+      }
+
+     .job-title:after {
+        color: $color--white;
+      }
+
+     .job-type {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .job-title {
+          font-size: $font-size--xl;
+          display: block;
+          @include media-breakpoint-up(md) {
+            &:after {
+              content: '\e902';
+              font-size: $font-size--xl;
+              font-family: 'icomoon';
+              color: $color--white;
+              position: absolute;
+              top: 22px;
+              right: 10px;
+              font-weight: bold;
+            }
+          }
+      }
+    }
+  }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+}
+
+.jobs--details-wrapper {
+  margin: auto;
+  width: 100%;
+  padding: 50px 20px 50px 20px;
+  margin-top: 0;
+  @include media-breakpoint-up(lg) {
+    width: 70%;
+    padding: 0 0 40px 0;
+    margin-top: 150px;
+  }
+
+ .jobs-content-wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   .title {
+     order:1;
+     flex-basis: 100%;
+     font-size: $font-size--title-mob;
+     color: $color--primary;
+     line-height: 1;
+     @include media-breakpoint-up(lg) {
+       font-size: $font-size--title-medium;
+       flex-basis: 80%;
+       line-height: 0.5;
+     }
+   }
+   .link {
+     order: 6;
+     flex-basis: 100%;
+     text-align: center;
+     @include media-breakpoint-up(lg) {
+       flex-basis: 20%;
+       order: 2;
+       text-align: right;
+     }
+     .button--link {
+       color: $color--white;
+       display: inline-block;
+     }
+   }
+   .link-desktop {
+     display: none;
+     @include media-breakpoint-up(lg) {
+       display: block;
+       padding: 40px 0;
+       order: 7;
+     }
+   }
+   .main-content {
+     padding: 10px 0;
+     flex-basis: 100%;
+     .main-content-title {
+       font-size: $font-size--lg;
+       color: $color--primary;
+     }
+     ol {
+       li{
+         list-style-type: unset;
+       }
+     }
+   }
+   .location {
+     order:2;
+     font-size: $font-size--lg;
+     color: $color--primary;
+     .loc-label {
+       font-size: $font-size--s;
+       color: $color--secondary;
+     }
+     @include media-breakpoint-up(lg) {
+       order:3;
+     }
+   }
+   .description {
+     font-family: $font--regular;
+     order: 3;
+     @include media-breakpoint-up(lg) {
+       order: 4;
+     }
+     .main-content-title {
+       font-family: $font--medium;
+     }
+   }
+   .requirements {
+     font-family: $font--regular;
+     order: 4;
+     @include media-breakpoint-up(lg) {
+       order: 5;
+     }
+     .main-content-title {
+       font-family: $font--medium;
+     }
+   }
+   .skills {
+     font-family: $font--regular;
+     order: 5;
+     @include media-breakpoint-up(lg) {
+       order: 6;
+     }
+     .main-content-title {
+       font-family: $font--medium;
+     }
+     ul {
+       font-family: $font--regular;
+       padding: 0 0 0 20px;
+       position: relative;
+       li {
+         padding-left: 0;
+         text-indent: 0;
+         margin-bottom: 10px;
+         &:before {
+           content: '\e908';
+           font-size: $font-size--base;
+           font-family: 'icomoon';
+           position: absolute;
+           left: 0;
+           font-weight: bold;
+         }
+       }
+     }
+   }
+ }
+}
+
+/*career page popup style*/
+  .ui-dialog {
+    @include media-breakpoint-up(md) {
+      width: 57% !important;
+    }
+
+    top: 50% !important;
+    left: 50% !important;
+    width: 90% !important;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    .ui-dialog-titlebar {
+      display: none;
+    }
+  }
+
+
+  .ui-dialog-buttonpane {
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+    }
+
+    position: absolute;
+    z-index: 9999;
+    right: auto;
+    bottom: 0;
+    left: 20px;
+    border: 0;
+    background: none !important;
+
+    .ui-dialog-buttonset {
+      @include media-breakpoint-up(lg) {
+        float: right;
+      }
+      float: left;
+    }
+    button {
+      margin-left: 30px;
+      background:$color--background-hover;
+      color: $color--white;
+      padding: 10px;
+      font:$font-size--xs $font--medium;
+      width: 100px;
+      @include media-breakpoint-up(lg) {
+        margin: 10px 0 10px 0px !important;
+      }
+      &:hover {
+        background:$color--button--hover;
+        color: $color--white;
+        border: none !important;
+      }
+    }
+  }
+
+  .ui-widget-content {
+    overflow: hidden;
+    padding: 0 !important;
+  }
+
+  .ui-dialog-title {
+    display: none;
+  }
+
+
+
+
+.webform--opportunities {
+  display: flex;
+  flex-wrap: wrap;
+  padding:40px 20px;
+  position: relative;
+  @include media-breakpoint-up(lg) {
+    height: 540px;
+    padding:40px;
+  }
+  &__left {
+    flex: 0 0 100%;
+    background-image: url("../assets/images/popup.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    margin-bottom: 10px;
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 50%;
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+  &__right {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 50%;
+      padding: 0 0 0 40px;
+      height: 100%;
+    }
+    .form-item {
+      flex: 0 0 100%;
+      margin-top: 0;
+      margin-bottom: 10px;
+      > h2 {
+        font:$font-size--xxl $font--medium;
+      }
+    }
+    .form-item-webform-description, .form-item-email, .form-item-message {
+      .title {
+        line-height: 1.3;
+      }
+      .description {
+        padding-right: 10px;
+        font: $font-size--s $font--regular;
+        color: $color--secondary;
+        max-width: 80%;
+      }
+    }
+    .form-item-profile-upload {
+      flex: 0 0 50%;
+      input {
+        height: 60px;
+        padding: 15px;
+      }
+      input[value="Remove"] {
+        width: 67px;
+        height: 36px;
+        font: $font-size--xs $font--medium;
+        padding: 10px;
+        margin-right: 0;
+      }
+      .file-upload-js-error {
+        //display: none;
+        font-size: 0;
+        height: 50px;
+        padding: 0;
+        background: no-repeat 0 0;
+        background-image: url("../assets/images/error.png");
+        background-color: $color--white;
+        color: $white;
+        border: none;
+        background-size: cover;
+        box-shadow: none;
+      }
+    }
+    .form-item-form-title {
+      margin-bottom: 0;
+    }
+  }
+  .close-icon {
+    display: inline-block;
+    background-image: url("../assets/images/close.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    @include media-breakpoint-up(lg) {
+      top: 20px;
+      right: 20px;
+    }
+  }
+}
+
+.error-msg {
+  color: red;
+  margin-bottom: 10px;
+}
+.webform-submission-contact-team-form {
+  .form-type-managed-file {
+    flex: 0 0 50%;
+    input {
+      height: 60px;
+      padding: 15px;
+    }
+    input[value="Remove"] {
+      width: 67px;
+      height: 36px;
+      font: $font-size--xs $font--medium;
+      padding: 10px;
+      margin-right: 0;
+    }
+    .file-upload-js-error {
+      font-size: 0;
+      height: 50px;
+      padding: 0;
+      background: no-repeat 0 0;
+      background-image: url("../assets/images/error.png");
+      background-color: $color--white;
+      color: $white;
+      border: none;
+      background-size: cover;
+      box-shadow: none;
+    }
+  }
+}
+.careers-page {
+  .paragraph__sidebar-media-left {
+    img {
+      height: 650px !important;
+    }
+  }
+}
+
+.application-page{
+  .hero-section {
+    padding:20px;
+    @include media-breakpoint-up(md) {
+      padding: 50px 0;
+    }
+    &__title {
+      flex: 0 0 100%;
+      text-align: center;
+    }
+  }
+  .block-webform-block {
+    padding: 0;
+  }
+  .application {
+    padding: 20px;
+    @include media-breakpoint-up(md) {
+      padding: 30px;
+    }
+    &__title {
+      font-size: $font-size--title-mob;
+      font-weight: $font--medium;
+      text-align: center;
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--lg;
+      }
+    }
+    &__row,.agreement_wrapper {
+      max-width: 950px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      margin-bottom: 50px;
+      background-color: $color--white !important;
+      box-shadow: 0 3px 15px 0 rgba($color--black, 0.3);
+      @include media-breakpoint-up(md) {
+        padding: 40px 60px;
+      }
+      .form-item {
+        flex: 0 0 100%;
+        @include media-breakpoint-up(md) {
+          flex: 0 0 50%;
+        }
+      }
+      .form-item-first-name input,
+      .form-item-email input,
+      .form-item-city input,
+      .form-item-zipcode input,
+      .form-item-position-type input,
+      .form-item-referred-details input,
+      .form-item-school-city input,
+      .form-item-school-telephone input,
+      .form-item-last-grade input,
+      .form-item-company-1 input,
+      .form-item-company-2 input,
+      .form-item-company-city-1 input,
+      .form-item-company-city-2 input,
+      .form-item-company-zipcode-1 input,
+      .form-item-company-zipcode-2 input,
+      .form-item-company-position-1 input,
+      .form-item-company-position-2 input,
+      .form-item-wage-1 input,
+      .form-item-wage-2 input,
+      .form-item-service input,
+      .form-item-name-1 input,
+      .form-item-name-2 input,
+      .form-item-from-date-1 input,
+      .form-item-from-date-2 input,
+      .form-item-city-1 input,
+      .form-item-city-2 input,
+      .form-item-zipcode-1 input,
+      .form-item-zipcode-2 input,
+      .form-item-applicant-signature input,
+      .form-item-position-1 input,
+      .form-item-position-2 input,
+      .form-item-zipcode-2 input,
+      .form-item-schools-attended input,
+      .form-item-worked-status input,
+      .form-item-attach-file input,
+      .form-item-start-date input {
+        @include media-breakpoint-up(md) {
+          max-width: calc(100% - 30px);
+          margin-right: 30px;
+        }
+      }
+      .form-item-worked-before,
+      .form-item-honors,
+      .form-item-special-skills,
+      .form-item-membership,
+      .form-item-reference-conditions,
+      .form-item-worked-dates-1,
+      .form-item-worked-dates-2,
+      .form-item-address-1,
+      .form-item-address-2,
+      .form-item-personal-title,
+      .form-item-availability-title,
+      .form-item-education-title,
+      .form-item-recent-employment-title,
+      .form-item-general-title,
+      .form-item-references-title,
+      .form-item-recent-employment-title-2,
+      .form-item-references-title-1,
+      .form-item-references-title-2,
+      .agreement{
+        flex: 0 0 100%;
+      }
+    }
+
+    .radios--wrapper {
+       margin-left: 0;
+       margin-right: 0;
+      .form-radios {
+        .form-item {
+          flex: 0 0 50%;
+          display: flex;
+          @include media-breakpoint-up(md) {
+            flex: 0 0 100%;
+          }
+          input {
+            width: 30px;
+            height: 20px;
+          }
+        }
+      }
+    }
+    #edit-age-confirmation--wrapper {
+      legend {
+        min-height: 48px;
+      }
+    }
+    .form-item-applicant-signature input {
+      border: 0;
+      background-color: $color--white;
+      border-bottom: 1px solid $color--secondary;
+    }
+    .form-item {
+      label {
+        font-size: $font-size--s;
+        color: $color--secondary;
+      }
+      .description {
+        font-size: $font-size--xs;
+        color: $color--grey--light;
+      }
+    }
+    .form-actions {
+      text-align: center;
+      input {
+        width: 100px;
+        height: 40px;
+        padding: 0 !important;
+        @include media-breakpoint-up(md) {
+          width: 120px;
+          height: 50px;
+        }
+      }
+    }
+    .form-item-worked-dates-1,
+    .form-item-worked-dates-2,
+    .form-item-references-title-1,
+    .form-item-references-title-2,
+    .form-item-personal-title,
+    .form-item-references-title,
+    .form-item-availability-title,
+    .form-item-education-title,
+    .form-item-recent-employment-title,
+    .form-item-recent-employment-title-2,
+    .form-item-general-title {
+      margin-bottom: 0;
+      p {
+        margin-bottom: 0;
+      }
+      h5 {
+        margin-bottom: 0;
+      }
+      h4 {
+        margin-bottom: 0;
+      }
+    }
+    .form-item-attach-file {
+      input {
+        height: 60px;
+        padding: 1rem;
+      }
+      input[value="Remove"] {
+        width: 80px;
+        height: auto;
+        font: $font-size--xs $font--medium;
+        padding: 12px;
+        margin-left: 0;
+        @include media-breakpoint-up(md) {
+          width: 100px;
+          padding: 1rem;
+          margin-left: 1rem;
+        }
+
+      }
+      .file-upload-js-error {
+        @include media-breakpoint-up(md) {
+          max-width: 337px;
+        }
+      }
+    }
+    .form-item-date {
+      @include media-breakpoint-up(md) {
+        padding-left: 50px;
+      }
+    }
+    .agreement_wrapper {
+      border: 0;
+      margin-bottom: 20px;
+      .agreement {
+        p {
+          font-size: $font-size--s;
+          font-weight: $font--medium;
+          color: $color--secondary;
+        }
+        span {
+          font-size: $font-size--s;
+          font-weight: 600;
+        }
+      }
+    }
+    .ui-datepicker-trigger {
+      width: 20px;
+    }
+  }
+}

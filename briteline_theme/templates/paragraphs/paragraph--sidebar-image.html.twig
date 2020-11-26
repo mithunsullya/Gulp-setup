@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme implementation to for the sidebar image with text paragraphs.
+ */
+#}
+{% if paragraph.field_media_size.value == "1" %}
+  {% if paragraph.field_media_side.value == "0" %}
+    {% set paragraph_classes = ["paragraph__sidebar-medium", "paragraph__sidebar-media", "paragraph__sidebar-media-left"] %}
+  {% else %}
+    {% set paragraph_classes = ["paragraph__sidebar-medium","paragraph__sidebar-media", "paragraph__sidebar-media-right"] %}
+  {% endif %}
+{% elseif paragraph.field_media_size.value == "0" %}
+  {% if paragraph.field_media_side.value == "0" %}
+    {% set paragraph_classes = ["paragraph__sidebar-small", "paragraph__sidebar-media", "paragraph__sidebar-media-left"] %}
+  {% else %}
+    {% set paragraph_classes = ["paragraph__sidebar-small", "paragraph__sidebar-media", "paragraph__sidebar-media-right"] %}
+  {% endif %}
+{% else %}
+  {% set paragraph_classes = [ "paragraph__sidebar-full" ] %}
+{% endif %}
+<div class = "media-wrapper sidebar-image-wrapper sidebar-image-bg">
+  <div class="layout-container">
+    <div{{ attributes.setattribute('class', paragraph_classes) }}>
+      <div class="sidebar-media__embed">
+        <div class="sidebar-media__image">
+          {{ content.field_image }}
+        </div>
+      </div>
+      <div class="sidebar-media__content">
+        {% if content.field_title|render|trim is not empty %}
+          <h3 class="content__title">
+            {{ content.field_title }}
+          </h3>
+        {% endif %}
+        <div class="content__text">
+          {{ content.field_description }}
+        </div>
+        {% if content.field_two_column_description|render|trim is not empty %}
+          <div class="two-column-description">
+            {{ content.field_two_column_description }}
+          </div>
+        {% endif %}
+        {% if content.field_link|render|trim is not empty %}
+          {% if content.field_show_popup['#items'].value == '1' %}
+            <a class="use-ajax button button--cta button--link" data-dialog-type="modal" href="{{ content.field_link.0['#url'] }}">
+              {{ content.field_link.0['#title'] }}
+            </a>
+          {% else %}
+            <a class="button button--cta button--link" data-dialog-type="modal" href="{{ content.field_link.0['#url'] }}">
+              {{ content.field_link.0['#title'] }}
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

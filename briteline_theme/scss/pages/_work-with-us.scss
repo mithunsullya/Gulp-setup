@@ -1,0 +1,169 @@
+.block-webform-block {
+  background: $color--background;
+  padding: 40px 0;
+
+  .webform-submission-send-us-a-drawing-form,
+  .webform-submission-customer-information-form,
+  .customer-form {
+    max-width: 950px;
+    margin: auto;
+    background: $color--white;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @media ($bp-larger-than-tablet) {
+      padding: 50px 90px 50px 90px;
+    }
+
+    .form-item {
+      flex: 0 1 100%;
+      @media ($bp-larger-than-tablet) {
+        flex: 0 0 48%;
+      }
+    }
+    .form-actions {
+      flex: 0 1 100%;
+      text-align: left;
+      input {
+        width: auto;
+      }
+    }
+    .form-type-processed-text,
+    .customer__comments,
+    .wrapper__full-width,
+    .bussiness__type {
+      flex: 0 1 100%;
+    }
+    .wrapper__full-width {
+      input,
+      textarea {
+        max-width: 100%;
+        @media ($bp-larger-than-tablet) {
+          max-width: 48%;
+        }
+      }
+    }
+    .additional__question {
+      font-size: 12px;
+      bottom: 0;
+      @media ($bp-larger-than-tablet) {
+        position: absolute;
+        bottom: 55px;
+        width: 50%;
+        left: 30%;
+      }
+      color: $color--secondary;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .fieldset-wrapper {
+      .js-webform-checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        @media ($bp-larger-than-tablet) {
+          flex-wrap: nowrap;
+        }
+        .form-item {
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+        input[type="checkbox"] {
+          width: 30px;
+          height: 20px;
+        }
+      }
+    }
+    .form-managed-file {
+      .form-submit {
+        width: 100px;
+        height: auto;
+      }
+    }
+    .webform-button--submit {
+      height: auto;
+    }
+    #ajax-wrapper {
+      max-width: 48%;
+    }
+  }
+  .customer-form {
+    margin-bottom: 35px;
+  }
+  .webform-submission-customer-credit-form-form {
+    .field__signature {
+      input {
+        background: none;
+        border: 0;
+        border-bottom: 1px solid $color--secondary;
+        padding-left: 5px;
+      }
+    }
+  }
+}
+
+.send-us-drawing,
+.request__info,
+.customer-application {
+  counter-reset: company-count;
+  h1 {
+    font: $font-size--title-mob $font--medium;
+  }
+  form label,
+  form legend {
+    color: $color--secondary;
+    font: $font-size--s $font--medium;
+  }
+  form legend {
+    margin-bottom: 1rem;
+  }
+  .simple__text {
+    font: $font-size--s $font--regular;
+    line-height: 1.5;
+    color: $color--secondary;
+  }
+  .form-item .description {
+    color: $color--grey--light;
+    font: $font-size--xs $font--regular;
+  }
+
+  .additional__information {
+    font-size: 12px;
+    bottom: 0;
+    @media ($bp-larger-than-tablet) {
+      position: absolute;
+      bottom: 55px;
+      width: 50%;
+      left: 30%;
+    }
+    color: $color--secondary;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .company__count:before {
+    counter-increment: company-count;
+    content: "0" counter(company-count) " ";
+    color: $color--grey--light;
+    font: $font-size--xl $font--medium;
+    margin-left: -32px;
+    @media ($bp-smaller-than-desktop) {
+      display: none;
+    }
+  }
+}
+
+// WebForm stylings.
+.send-us-drawing {
+  .form-type-managed-file {
+    input {
+      height: 60px;
+      padding: 1rem;
+    }
+  }
+}
+

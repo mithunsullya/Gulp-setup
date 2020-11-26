@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Basic page layout for GSH node page.
+ */
+#}
+
+{% extends "page.html.twig" %}
+
+{% block content %}
+  <div class="layout-main-wrapper" id="main">
+    <main class="main-content" id="content" role="main">
+      <a id="main-content" tabindex="-1"></a>
+      {{ page.content }}
+    </main>
+  </div>
+{% endblock %}

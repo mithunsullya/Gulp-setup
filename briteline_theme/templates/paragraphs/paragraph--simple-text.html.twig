@@ -1,0 +1,35 @@
+{#
+/**
+* @file
+* Template override for Simple Text Paragraphs.
+*/
+#}
+<div class="service-attributes">
+  <div class="layout-container">
+    {% if content.field_content_title|render|striptags %}
+    <div class="attribute__name">
+      {{ content.field_content_title }}
+    </div>
+    {% endif %}
+    {% if content.field_content|render|striptags %}
+      <div class="attribute__description">
+        {{ content.field_content }}
+      </div>
+    {% endif %}
+    {% if content.field_content_link|render|striptags %}
+      {% if content.field_show_in_modal['#items'].value == '1' %}
+        <div class="cta">
+          <a class="use-ajax button button--cta button--link" data-dialog-type="modal" href="{{ content.field_content_link.0['#url'] }}">
+            {{ content.field_content_link.0['#title'] }}
+          </a>
+        </div>
+      {% else %}
+        <div class="cta">
+          <a class="button button--cta button--link" href="{{ content.field_content_link.0['#url'] }}">
+            {{ content.field_content_link.0['#title'] }}
+          </a>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

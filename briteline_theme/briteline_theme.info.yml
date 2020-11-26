@@ -1,0 +1,24 @@
+name: Briteline Theme
+type: theme
+description: 'Briteline Custom Theme'
+package: Other
+core: 8.x
+libraries:
+  - briteline_theme/global-styling
+  - briteline_theme/owl-carousel
+  - briteline_utility/briteline_utility.thanksgiving
+
+base theme: classy
+#Using Classy as a base theme https://www.drupal.org/theme-guide/8/classy
+
+regions:
+  branding: Branding
+  top_menu: Top menu
+  top_contact: Top contact
+  mobile_navigation: Mobile navigation
+  content: Content
+  footer_top: Footer Top
+  footer_first: Footer First
+  footer_second: Footer Second
+  footer_third: Footer Third
+  footer_bottom: Footer Bottom

@@ -1,0 +1,27 @@
+{#
+/**
+* @file
+* Theme override for marketing block.
+*/
+#}
+<section class="marketing" style="background-image: url('{{ file_url(content.field_marketing_banners.0['#item'].entity.uri.value) }}')" >
+  <div class="marketing__container layout-container">
+    <div class="title"> {{content.field_featured_title}} </div>
+
+    {% if content.field_description|render is not empty  %}
+    <div class="description">
+      {{ content.field_description }}
+    </div>
+    {% endif %}
+
+    {% if content.field_link|render is not empty  %}
+    <div class="cta">
+      <a class="button button--cta button--link" href="{{ content.field_link.0['#url'] }}">
+        {{ content.field_link.0['#title'] }}
+      </a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+

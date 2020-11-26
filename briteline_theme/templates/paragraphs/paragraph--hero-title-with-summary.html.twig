@@ -1,0 +1,15 @@
+{% extends "paragraph.html.twig" %}
+{% block content %}
+<div class="hero-section">
+  {% if content.field_title|render|trim is not empty %}
+    <div class="hero-section__title">
+      {{ content.field_title }}
+    </div>
+  {% endif %}
+  {% if  content.field_summary|render|trim is not empty %}
+    <div class="hero-section__summary">
+      {{ content.field_summary }}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

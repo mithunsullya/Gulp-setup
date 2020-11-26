@@ -1,0 +1,97 @@
+/**
+  Styling for the table.
+ */
+.anodizing-table-wrapper {
+  background: $color--background;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  @media ($bp-larger-than-tablet) {
+    padding: 80px 0;
+    margin-bottom: 40px;
+  }
+}
+.anodizing-table {
+  background: $color--white;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  @media ($bp-larger-than-tablet) {
+    @media ($bp-smaller-than-desktop) {
+      max-width: 1000px;
+    }
+  }
+  h3 {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font: $font-size--title-mob $font--medium;
+    max-width: 700px;
+    margin: auto;
+    @media ($bp-larger-than-tablet) {
+      padding-top: 35px;
+      font: $font-size--title $font--medium;
+    }
+    @media ($bp-larger-than-desktop) {
+      text-align: left;
+      padding-left: 46px;
+      max-width: 1200px;
+    }
+  }
+}
+.services {
+  table {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: block;
+    margin: 0 0 40px 0;
+    padding: 20px;
+    background: $color--white;
+    text-align: left;
+
+    @media ($bp-larger-than-tablet) {
+      overflow-x: initial;
+      display: inline-table;
+      padding: 40px 40px 40px 100px;
+      margin: 0 0 60px 0;
+    }
+
+    caption {
+      font: $font-size--l $font--medium;
+      color: $black;
+    }
+
+    th {
+      padding: 0.75rem 2rem !important;
+      background: $color--primary;
+      text-align: left;
+      text-transform: none;
+      border: 2px solid $white !important;
+      @media ($bp-larger-than-tablet) {
+        padding: 1rem 4rem !important;
+      }
+    }
+
+    tr, td {
+      padding: 0.75rem 2rem !important;
+      line-height: 1;
+      border: 2px solid $white !important;
+      @media ($bp-larger-than-tablet) {
+        padding: 1rem 4rem !important;
+      }
+    }
+
+    tbody {
+      font: $font-size--l $font--regular;
+
+      tr:nth-child(even) td {
+
+        background: $color--background;
+      }
+
+      tr:nth-child(odd) td {
+        background: $color--background;
+      }
+
+    }
+  }
+}

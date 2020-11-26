@@ -1,0 +1,64 @@
+/**
+*********************
+* Variables
+********************
+**/
+
+/**
+  * Font sizes and spacing/widths
+  * -----------------------------------------------------------------------------
+  */
+
+/* Font families */
+$font--bold:"HelveticaNeueBold",
+sans-serif;
+$font--regular:"HelveticaNeueRegular",
+sans-serif;
+$font--medium:"HelveticaNeueMedium",
+sans-serif;
+$font--light:"HelveticaNeueLight",
+sans-serif;
+
+
+/* Font sizes */
+$font-size--xxs: 10px;
+$font-size--xs: 12px;
+$font-size--s: 14px;
+$font-size--base: 16px;
+$font-size--l: 18px;
+$font-size--xl: 20px;
+$font-size--xxl: 22px;
+$font-size--title-mob:30px;
+$font-size--title-medium:36px;
+$font-size--sub-title:40px;
+$font-size--title:50px;
+$font-size--lg: 24px;
+$font-size--xxl-title: 80px;
+$font-size--sub-title-lg: 42px;
+
+/* Transitions */
+$transition-time--base: 0.25s;
+
+/* Breakpoints */
+$bp-smaller-than-mobile: "max-width: 40rem" !default;
+$bp-smaller-than-tablet: "max-width: 64rem" !default;
+$bp-smaller-than-desktop: "max-width: 75rem" !default;
+$bp-larger-than-mobile: "min-width: 40rem" !default;
+$bp-larger-than-tablet: "min-width: 64rem" !default;
+$bp-larger-than-desktop: "min-width: 75rem" !default;
+
+/* Spacings and widths */
+$layout--container-max-width: 78rem;
+$grid-columns: 12;
+$grid--gutter: 1.25rem;
+$spacing--small: 0.5rem;
+$spacing--medium: 1rem;
+$spacing--large: 1.5rem;
+
+/** Button settings **/
+$button--padding-left: 2rem !default;
+$button--padding-right: 2rem !default;
+$button--padding-top: 1rem !default;
+$button--padding-bottom: 1rem !default;
+$button--horizontal-padding: $button--padding-left;
+$button--vertical-padding: $button--padding-top;

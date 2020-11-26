@@ -1,0 +1,27 @@
+.two-column-description {
+  display: flex;
+  flex-wrap: wrap;
+  .text-item {
+    margin-bottom: 20px;
+    line-height: 1.5 !important;
+    &:nth-child(odd) {
+      font: $font-size--base $font--medium;
+      margin-right: 30px;
+      flex: 0 0 50%;
+      color: $color--primary;
+      max-width: 30%;
+      @media ($bp-smaller-than-mobile) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    &:nth-child(even) {
+      flex: 1 0 50%;
+      color: $color--secondary;
+      font: $font-size--base $font--regular;
+      @media ($bp-smaller-than-mobile) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}
