@@ -1,0 +1,33 @@
+.menu--main > .menu {
+  @include bp-large() {
+    flex-direction: row;
+    padding: unset;
+  }
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+
+  > .menu-item {
+    @include media-breakpoint-up(md) {
+      flex: unset;
+    }
+
+    flex: 0 1 100%;
+    padding-right: 45px;
+    white-space: nowrap;
+
+    > a {
+      padding-bottom: 5px;
+      color: $white;
+      font: $font--semibold $font-size--base $font-lato--semibold;
+
+      &:hover {
+        border-bottom: 3px solid var(--color-primary);
+        text-decoration: none;
+      }
+    }
+  }
+}

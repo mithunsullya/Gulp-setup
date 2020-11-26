@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
+
+/** Breakpoints **/
+@mixin bp-large {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and ($bp-larger-than-tablet) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and ($bp-larger-than-mobile) {
+    @content;
+  }
+}
+
+@mixin bp-xs-small {
+  @media only screen and ($bp-smaller-than-mobile) {
+    @content;
+  }
+}

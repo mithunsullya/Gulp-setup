@@ -1,0 +1,84 @@
+.mobile__navigation {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+  padding: 30px 0;
+  background-color: var(--color--smoky-black);
+  overflow-y: auto;
+
+  .menu {
+    padding: 0 30px;
+
+    .menu-item {
+      padding: 20px 0 10px;
+      border-bottom: 2px solid $white;
+    }
+
+    .menu-item--expanded {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        content: "";
+        background: url("../../assets/images/plus-icon.svg") no-repeat center;
+        background-size: 16px;
+      }
+    }
+
+    .active--menu {
+      transition: 0.4s ease-in-out;
+      padding-bottom: 0;
+
+      > a {
+        border-bottom: 5px solid var(--color-primary);
+        padding-bottom: 3px;
+      }
+
+      &::after {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        content: "";
+        background: url("../../assets/images/minus-icon.svg") no-repeat center;
+        background-size: 16px;
+      }
+
+      .menu {
+        position: unset;
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        background: var(--color--white);
+      }
+
+      .menu-item {
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .close-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30px;
+
+    .menu--close-button {
+      display: block;
+      width: 30px;
+      max-width: 70px;
+      height: 36px;
+      background: url("../../assets/images/close.svg") no-repeat center center;
+      background-size: 34px;
+    }
+  }
+}

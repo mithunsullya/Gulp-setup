@@ -1,0 +1,70 @@
+/**
+*********************
+* Variables
+********************
+**/
+
+/**
+  * Font sizes and spacing/widths
+  * -----------------------------------------------------------------------------
+  */
+
+/* Font families */
+$font-lato--regular: "LatoRegular";
+$font-lato--medium: "LatoMedium";
+$font-lato--semibold: "LatoSemiBold";
+$font-lato--bold: "LatoBold";
+
+/* Font sizes */
+$font--heavy: 900;
+$font--bold: 700;
+$font--semibold: 600;
+$font--medium: 500;
+$font--regular: 400;
+$font-size--base: 16px;
+$font-size--s: 14px;
+$font-size--xs: 12px;
+$font-size--xxs: 10px;
+$font-size--l: 18px;
+$font-size--xl: 20px;
+$font-size--xxl: 22px;
+$font-size--xxxl: 26px;
+$font-size--xxxxl: 28px;
+$font-size--medium: 28px;
+$font-size--subtitle: 32px;
+$font-size--title: 42px;
+$font-size--subtitle--sm: $font-size--xxxxl;
+$transition-base: all 0.5s ease-in-out;
+$transition-short: all 0.2s ease-in-out;
+$transition-long: all 0.8s ease-in-out;
+$gradient: transparent
+  linear-gradient(0deg, #101422 0%, #0e1727e2 37%, #002a4d07 100%) 0 0 no-repeat
+  padding-box;
+
+/* Transitions */
+$transition-time--base: 0.25s;
+
+/* Breakpoints */
+$bp-smaller-than-mobile: "max-width: 40rem" !default;
+$bp-smaller-than-tablet: "max-width: 64rem" !default;
+$bp-smaller-than-desktop: "max-width: 75rem" !default;
+$bp-larger-than-mobile: "min-width: 40rem" !default;
+$bp-larger-than-tablet: "min-width: 64rem" !default;
+$bp-larger-than-desktop: "min-width: 87rem" !default;
+
+/* Spacings and widths */
+$layout--container-max-width: 600px;
+$layout--container-width: 970px;
+$grid-columns: 12;
+$grid--gutter: 1.25rem;
+$spacing--small: 0.5rem;
+$spacing--medium: 1rem;
+$spacing--large: 1.5rem;
+
+/** Button settings **/
+$button--padding-left: 2rem !default;
+$button--padding-right: 2rem !default;
+$button--padding-top: 1rem !default;
+$button--padding-bottom: 1rem !default;
+$button--horizontal-padding: $button--padding-left;
+$button--vertical-padding: $button--padding-top;

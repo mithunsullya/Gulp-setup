@@ -1,0 +1,17 @@
+/*
+****************************************************************************************************************
+N.B please don't write any styling in this file. This file is used only to import the styles from the framework.
+****************************************************************************************************************
+*/
+/**
+  Main sass file.
+ */
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+@import "settings/settings";
+@import "base/base";
+@import "typography/typography";
+@import "navigation/navigation";
+@import "components/components";

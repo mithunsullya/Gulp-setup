@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>SDNN - html</title>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <div class="header__navigation d-none">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-11">
+              <div class="region region-navigation">
+                <div
+                  class="views-exposed-form bef-exposed-form block block--search"
+                  data-bef-auto-submit-full-form=""
+                  data-bef-auto-submit=""
+                  data-bef-auto-submit-delay="500"
+                  data-drupal-selector="views-exposed-form-search-page"
+                  id="block-search"
+                  data-block-plugin-id="views_exposed_filter_block:search-page"
+                  style="display: none"
+                >
+                  <div class="container">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      id="search-placeholder"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 512 512"
+                      style="enable-background: new 0 0 512 512"
+                      xml:space="preserve"
+                      width="20px"
+                      height="20px"
+                      class=""
+                    >
+                      <g>
+                        <g>
+                          <g>
+                            <path
+                              d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"
+                              data-original="#000000"
+                              class="active-path"
+                              data-old_color="#000000"
+                              fill="#FFFFFF"
+                            ></path>
+                          </g>
+                        </g>
+                        <g>
+                          <g>
+                            <path
+                              d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"
+                              data-original="#000000"
+                              class="active-path"
+                              data-old_color="#000000"
+                              fill="#FFFFFF"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+
+                    <!-- search form  -->
+
+                    <form
+                      action="/search"
+                      method="get"
+                      id="views-exposed-form-search-page"
+                      accept-charset="UTF-8"
+                      data-drupal-form-fields="edit-keyword,edit-f-0,edit-sort-by,edit-reset"
+                    >
+                      <div class="form--inline clearfix">
+                        <div
+                          class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keyword form-item-keyword"
+                        >
+                          <label for="edit-keyword">Search</label>
+                          <input
+                            placeholder="Search"
+                            data-bef-auto-submit-exclude=""
+                            data-drupal-selector="edit-keyword"
+                            type="text"
+                            id="edit-keyword"
+                            name="keyword"
+                            value=""
+                            size="30"
+                            maxlength="128"
+                            class="form-text"
+                          />
+                        </div>
+                        <details
+                          class="bef--secondary js-form-wrapper form-wrapper"
+                          data-drupal-selector="edit-secondary"
+                          id="edit-secondary"
+                          open="open"
+                        >
+                          <summary
+                            role="button"
+                            aria-controls="edit-secondary"
+                            aria-expanded="true"
+                            aria-pressed="true"
+                          >
+                            Advanced options
+                          </summary>
+                          <div class="details-wrapper">
+                            <div class="facets-widget-dropdown">
+                              <div
+                                class="js-form-item form-item js-form-type-select form-type-select js-form-item-f-0 form-item-f-0"
+                              >
+                                <label for="edit-f-0">Type</label>
+                                <select
+                                  data-drupal-selector="edit-f-0"
+                                  id="edit-f-0"
+                                  name="f[0]"
+                                  class="form-select"
+                                >
+                                  <option value="" selected="selected">
+                                    Type
+                                  </option>
+                                  <option value="type:course">Courses</option>
+                                  <option value="type:event">Events</option>
+                                  <option value="type:news_article">
+                                    News/Articles
+                                  </option>
+                                  <option value="type:podcast">Podcasts</option>
+                                  <option value="type:product">Products</option>
+                                  <option value="type:video">Videos</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"
+                            >
+                              <label for="edit-sort-by">Sort by</label>
+                              <select
+                                data-drupal-selector="edit-sort-by"
+                                id="edit-sort-by"
+                                name="sort_by"
+                                class="form-select"
+                              >
+                                <option
+                                  value="search_api_relevance"
+                                  selected="selected"
+                                >
+                                  Relevance
+                                </option>
+                                <option value="created">Authored on</option>
+                              </select>
+                            </div>
+                          </div>
+                        </details>
+                        <div
+                          data-drupal-selector="edit-actions"
+                          class="form-actions js-form-wrapper form-wrapper"
+                          id="edit-actions"
+                        >
+                          <input
+                            data-bef-auto-submit-click=""
+                            class="js-hide button js-form-submit form-submit"
+                            data-drupal-selector="edit-submit-search"
+                            type="submit"
+                            id="edit-submit-search"
+                            value="Search"
+                          />
+                          <input
+                            data-drupal-selector="edit-reset"
+                            type="submit"
+                            id="edit-reset"
+                            name="op"
+                            value="Reset"
+                            class="button js-form-submit form-submit"
+                          />
+                        </div>
+                      </div>
+                    </form>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      id="close-search"
+                      x="0px"
+                      y="0px"
+                      viewBox="0 0 512.001 512.001"
+                      style="enable-background: new 0 0 512.001 512.001"
+                      xml:space="preserve"
+                      width="20px"
+                      height="20px"
+                      class=""
+                    >
+                      <g>
+                        <g>
+                          <g>
+                            <path
+                              d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"
+                              data-original="#000000"
+                              class="active-path"
+                              data-old_color="#000000"
+                              fill="#FFFFFF"
+                            ></path>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <nav
+                  role="navigation"
+                  aria-labelledby="block-mainnavigation-menu"
+                  id="block-custommenu"
+                  class="navigation menu--main"
+                >
+                  <!-- change the desktop menu links here -->
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="/">Link 1</a>
+                    </li>
+                    <li class="menu-item menu-item--expanded">
+                      <a href="/">Link 2</a>
+                      <ul class="menu">
+                        <li class="menu-item">
+                          <a href="/design">Design Connections</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="/webinars">Webinars</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="/ceus">CEUs</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/">Link 3</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/">Link 4</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col">
+              <button id="search-trigger"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div
+          class="row align-items-center justify-content-between vertical_spacer"
+        >
+          <div class="header__branding col-lg-4 col-sm-9 col-9">
+            <span class="d-none desktop-branding">
+              <div class="region region-branding">
+                <div
+                  id="block-sitebranding"
+                  data-block-plugin-id="system_branding_block"
+                  class="block block-system block-system-branding-block"
+                >
+                  <!-- change the desktop here -->
+
+                  <a href="/" rel="home" class="site-logo">
+                    <img
+                      src="assets/images/MT_Meetings_Today_Logo_BW_tag@2x.svg"
+                      alt="Home"
+                    />
+                  </a>
+                </div>
+              </div>
+            </span>
+            <span class="d-block d-lg-none mobile-branding">
+              <a href="/">
+                <img
+                  src="assets/images/MT_Meetings_Today_Logo_white_tag@2x-01.svg"
+                />
+              </a>
+            </span>
+          </div>
+
+          <div class="header__ad-space col-lg-8">
+            <!-- ad goes here -->
+          </div>
+
+          <div
+            aria-label="Mobile menu"
+            class="hamburger col-xs-3 col-3 d-lg-none"
+          ></div>
+        </div>
+        <div class="region region-post-header">
+          <nav
+            role="navigation"
+            aria-labelledby="block-postheadernavigation-menu"
+            id="block-postheadernavigation"
+            data-block-plugin-id="system_menu_block:account"
+            class="block block-menu navigation menu--account"
+          >
+            <!-- account menu for desktop -->
+
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="/advertise">Advertise</a>
+              </li>
+              <li class="menu-item">
+                <a href="/subscribe">Subscribe</a>
+              </li>
+              <li class="menu-item">
+                <a href="/user/login" data-drupal-link-system-path="user/login"
+                  >Log in</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mobile__navigation d-none d-lg-none">
+          <div class="close-button">
+            <span class="menu--close-button"></span>
+          </div>
+          <div class="region-navigation">
+            <div
+              class="views-exposed-form bef-exposed-form block block--search"
+              data-bef-auto-submit-full-form=""
+              data-bef-auto-submit=""
+              data-bef-auto-submit-delay="500"
+              data-drupal-selector="views-exposed-form-search-page"
+              id="block-search"
+              data-block-plugin-id="views_exposed_filter_block:search-page"
+              style="display: block"
+            >
+              <div class="container">
+                <!--?xml version="1.0"?-->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  version="1.1"
+                  id="search-placeholder"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512 512"
+                  style="enable-background: new 0 0 512 512"
+                  xml:space="preserve"
+                  width="20px"
+                  height="20px"
+                  class=""
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path
+                          d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"
+                          data-original="#000000"
+                          class="active-path"
+                          data-old_color="#000000"
+                          fill="#FFFFFF"
+                        ></path>
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"
+                          data-original="#000000"
+                          class="active-path"
+                          data-old_color="#000000"
+                          fill="#FFFFFF"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <form
+                  action="/search"
+                  method="get"
+                  id="views-exposed-form-search-page"
+                  accept-charset="UTF-8"
+                  data-drupal-form-fields="edit-keyword,edit-f-0,edit-sort-by,edit-reset"
+                >
+                  <div class="form--inline clearfix">
+                    <div
+                      class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keyword form-item-keyword"
+                    >
+                      <label for="edit-keyword">Search</label>
+                      <input
+                        placeholder="Search"
+                        data-bef-auto-submit-exclude=""
+                        data-drupal-selector="edit-keyword"
+                        type="text"
+                        id="edit-keyword"
+                        name="keyword"
+                        value=""
+                        size="30"
+                        maxlength="128"
+                        class="form-text"
+                      />
+                    </div>
+                    <details
+                      class="bef--secondary js-form-wrapper form-wrapper"
+                      data-drupal-selector="edit-secondary"
+                      id="edit-secondary"
+                      open="open"
+                    >
+                      <summary
+                        role="button"
+                        aria-controls="edit-secondary"
+                        aria-expanded="true"
+                        aria-pressed="true"
+                      >
+                        Advanced options
+                      </summary>
+                      <div class="details-wrapper">
+                        <div class="facets-widget-dropdown">
+                          <div
+                            class="js-form-item form-item js-form-type-select form-type-select js-form-item-f-0 form-item-f-0"
+                          >
+                            <label for="edit-f-0">Type</label>
+                            <select
+                              data-drupal-selector="edit-f-0"
+                              id="edit-f-0"
+                              name="f[0]"
+                              class="form-select"
+                            >
+                              <option value="" selected="selected">Type</option>
+                              <option value="type:course">Courses</option>
+                              <option value="type:event">Events</option>
+                              <option value="type:news_article">
+                                News/Articles
+                              </option>
+                              <option value="type:podcast">Podcasts</option>
+                              <option value="type:product">Products</option>
+                              <option value="type:video">Videos</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div
+                          class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-by form-item-sort-by"
+                        >
+                          <label for="edit-sort-by">Sort by</label>
+                          <select
+                            data-drupal-selector="edit-sort-by"
+                            id="edit-sort-by"
+                            name="sort_by"
+                            class="form-select"
+                          >
+                            <option
+                              value="search_api_relevance"
+                              selected="selected"
+                            >
+                              Relevance
+                            </option>
+                            <option value="created">Authored on</option>
+                          </select>
+                        </div>
+                      </div>
+                    </details>
+                    <div
+                      data-drupal-selector="edit-actions"
+                      class="form-actions js-form-wrapper form-wrapper"
+                      id="edit-actions"
+                    >
+                      <input
+                        data-bef-auto-submit-click=""
+                        class="js-hide button js-form-submit form-submit"
+                        data-drupal-selector="edit-submit-search"
+                        type="submit"
+                        id="edit-submit-search"
+                        value="Search"
+                      />
+                      <input
+                        data-drupal-selector="edit-reset"
+                        type="submit"
+                        id="edit-reset"
+                        name="op"
+                        value="Reset"
+                        class="button js-form-submit form-submit"
+                      />
+                    </div>
+                  </div>
+                </form>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  version="1.1"
+                  id="close-search"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 512.001 512.001"
+                  style="enable-background: new 0 0 512.001 512.001"
+                  xml:space="preserve"
+                  width="20px"
+                  height="20px"
+                  class=""
+                >
+                  <g>
+                    <g>
+                      <g>
+                        <path
+                          d="M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717    L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859    c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287    l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285    L284.286,256.002z"
+                          data-original="#000000"
+                          class="active-path"
+                          data-old_color="#000000"
+                          fill="#FFFFFF"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="region-navigation">
+            <nav
+              role="navigation"
+              aria-labelledby="block-mainnavigation-menu"
+              id="block-custommenu"
+              class="navigation menu--main"
+            >
+              <!-- change the mobile menu links here -->
+
+              <ul class="menu">
+                <li class="menu-item">
+                  <a href="/">Link 1</a>
+                </li>
+                <li class="menu-item menu-item--expanded">
+                  <a href="/">Link 2</a>
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="/design">Design Connections</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/webinars">Webinars</a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="/ceus">CEUs</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <a href="/">Link 3</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/">Link 4</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- account menu for mobile -->
+
+            <nav
+              role="navigation"
+              aria-labelledby="block-postheadernavigation-2-menu"
+              id="block-postheadernavigation-2"
+              data-block-plugin-id="system_menu_block:account"
+              class="block block-menu navigation menu--account"
+            >
+              <ul class="menu">
+                <li class="menu-item">
+                  <a href="/advertise">Advertise</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/subscribe">Subscribe</a>
+                </li>
+                <li class="menu-item">
+                  <a
+                    href="/user/login"
+                    data-drupal-link-system-path="user/login"
+                    >Log in</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- main content goes here -->
+    </main>
+    <footer
+      class="footer"
+      id="footer"
+      aria-label="Site footer"
+      role="contentinfo"
+    >
+      <div class="footer__primary">
+        <div class="container">
+          <div class="row align-items-center justify-content-between">
+            <div class="branding col-sm-6 col-12">
+              <a href="/">
+                <!-- change the footer logo here -->
+
+                <img
+                  src="assets/images/MT_Meetings_Today_Logo_white_tag@2x-01.svg"
+                />
+              </a>
+            </div>
+            <ul class="social-links col-sm-6 col-12">
+              <li>
+                <a
+                  href="https://www.facebook.com/"
+                  class="social-links--facebook"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  class="social-links--instagram"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/"
+                  class="social-links--linkedin"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.pintrest.com/"
+                  class="social-links--pintrest"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.twitter.com/"
+                  class="social-links--twitter"
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="region region-post-footer">
+            <nav
+              role="navigation"
+              aria-labelledby="block-footer-menu"
+              id="block-footer"
+              data-block-plugin-id="system_menu_block:footer"
+              class="block block-menu navigation menu--footer"
+            >
+              <!-- change footer links here -->
+              <ul class="menu">
+                <li class="menu-item">
+                  <a href="/about">About us</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/subscribe">Subscribe</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/privacy">Privacy Statement</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/contact">Contact</a>
+                </li>
+                <li class="menu-item">
+                  <a href="http://con.com">Content Marketing Services</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/stamats">Stamats Communication Website</a>
+                </li>
+                <li class="menu-item">
+                  <a href="/marketing">Marketing</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+</html>

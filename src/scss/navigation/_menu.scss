@@ -1,0 +1,32 @@
+.menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+
+  > .menu-item {
+    @include bp-large() {
+      margin-right: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    flex: 1 0 auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    .container {
+      .row {
+        background: var(--color--smoky-black);
+      }
+    }
+  }
+
+  .header__branding {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}

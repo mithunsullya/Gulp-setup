@@ -1,0 +1,161 @@
+// @file
+// Stylings of the footer.
+
+#prefooter {
+  margin-top: 65px;
+}
+
+.footer {
+  @include media-breakpoint-up(md) {
+    margin-top: 32px;
+    padding-top: 80px;
+  }
+
+  margin-top: 0;
+  padding-top: 45px;
+  background: var(--color--smoky-black);
+
+  .branding {
+    img {
+      @include media-breakpoint-up(md) {
+        width: 375px;
+      }
+
+      width: 100%;
+    }
+  }
+}
+
+.social-links {
+  @include media-breakpoint-up(md) {
+    position: unset;
+    justify-content: flex-end;
+  }
+
+  position: absolute;
+  bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+
+  li {
+    margin-right: calc(15% - 30px);
+    padding: 10px;
+    list-style: none;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+
+    @include media-breakpoint-up(md) {
+      margin-right: 18px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      @include media-breakpoint-up(md) {
+        width: 30px;
+        height: 30px;
+        background-size: 25px;
+      }
+
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 25px;
+      font-family: $font-lato--regular;
+    }
+
+    .social-links--facebook {
+      background-image: url("../assets/images/facebook.svg");
+    }
+
+    .social-links--instagram {
+      background-image: url("../assets/images/instagram.svg");
+    }
+
+    .social-links--linkedin {
+      background-image: url("../assets/images/linkedin.svg");
+    }
+
+    .social-links--pintrest {
+      background-image: url("../assets/images/pintrest.svg");
+    }
+
+    .social-links--twitter {
+      background-image: url("../assets/images/twitter.svg");
+    }
+  }
+}
+
+.region-post-footer {
+  @include media-breakpoint-up(md) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  padding-top: 45px;
+  padding-bottom: 120px;
+
+  .menu {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    flex-direction: column;
+    margin: 0;
+    padding: unset;
+
+    .menu-item {
+      @include media-breakpoint-up(md) {
+        padding: 0 12px;
+        text-align: center;
+
+        &::after {
+          position: absolute;
+          top: 4px;
+          right: 0;
+          width: 1px;
+          height: 16px;
+          content: "";
+          background: $white;
+        }
+
+        &:last-child {
+          padding: 0 12px;
+
+          &::after {
+            visibility: hidden;
+          }
+        }
+      }
+
+      position: relative;
+      padding: 5px 0;
+
+      a {
+        @include media-breakpoint-up(md) {
+          font-size: $font-size--base;
+        }
+
+        transition: all 0.25s ease-in-out;
+        color: $white;
+        font-size: $font-size--l;
+        font-family: $font-lato--regular;
+
+        &:hover {
+          color: var(--color-primary);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.menu--main > .menu .menu-item--expanded {
+  @include bp-large() {
+    &:hover {
+      > a {
+        border-bottom: 3px solid var(--color-primary);
+
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+
+      .menu {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  padding-right: 20px;
+
+  > a {
+    @include bp-large() {
+      padding-right: 25px;
+
+      &::after {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        content: "";
+        transition: 0.5s all ease;
+        transform: rotate(180deg);
+        background: url("../../assets/images/up-arrow.svg") no-repeat center;
+        background-size: 12px;
+      }
+    }
+
+    position: relative;
+    padding-right: 5px;
+  }
+
+  > .menu-link__variant-two {
+    &::after {
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      display: block;
+      width: 12px;
+      height: 12px;
+      content: "";
+      background: url("../../assets/images/plus-icon.svg") no-repeat center;
+      background-size: 12px;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    visibility: hidden;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+    padding-left: unset;
+
+    .menu-item {
+      padding-right: 0;
+
+      a {
+        @include bp-large() {
+          color: var(--color--white);
+          padding: 5px 28px;
+        }
+
+        display: block;
+        transition: 0.25s all ease;
+        color: var(--color-text);
+        font: $font--regular $font-size--s $font-lato--regular;
+
+        &:hover,
+        &:focus {
+          color: var(--color-primary);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
