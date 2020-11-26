@@ -1,0 +1,84 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.billboard {
+  text-align: center;
+  display: flex;
+  position: relative;
+  color: var(--color--white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 460px;
+
+  &::before {
+    content: '';
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.billboard__wrapper {
+  position: relative;
+  max-width: 600px;
+  padding: 40px;
+  margin: auto;
+  z-index: 1;
+
+  > h1 {
+    font-family: $font-lato--heavy;
+  }
+
+  .field--name-field-abstract {
+    max-width: 400px;
+    margin: auto;
+
+    p,
+    li,
+    a {
+      font-size: $font-size--l;
+    }
+  }
+}
+
+.custom_background * {
+  color: var(--color-text);
+}
+
+.cta_links {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+    margin: 0 50px;
+    align-items: baseline;
+  }
+
+  .field--name-field-cta a {
+    @include button_filled;
+
+    font-size: $font-size--base;
+    margin-bottom: 20px;
+  }
+
+  .field--name-field-secondary-link a {
+    color: var(--color--white);
+    font: $font--bold $font-size--base $font-lato--bold;
+    padding: 8px 16px;
+    border: 1px solid var(--color--white);
+    border-radius: 4px;
+
+    &:hover {
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+  }
+}

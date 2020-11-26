@@ -1,0 +1,356 @@
+// Title stylings for the homepage components.
+
+.title__variant-1 {
+  > h2 {
+    @include title-variant__one();
+
+    @include media-breakpoint-up(md) {
+      padding-right: unset;
+      line-height: 1.5;
+    }
+  }
+}
+
+.title__variant-2 {
+  > h2 {
+    @include title_style();
+    @include bp-small();
+
+    overflow: unset;
+
+    @include media-breakpoint-up(md) {
+      overflow: hidden;
+    }
+
+    display: flex;
+    word-break: keep-all;
+    align-items: center;
+
+    &::after {
+      @include media-breakpoint-up(md) {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        margin-right: -100%;
+        border-bottom: 1px solid var(--color--smoke);
+      }
+
+      margin-left: 10px;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      content: '';
+      z-index: -1;
+      background-color: var(--color--smoke);
+    }
+  }
+}
+
+.title__variant-3 {
+  > h2 {
+    @include title-variant__one();
+
+    @include media-breakpoint-up(md) {
+      padding-right: unset;
+      color: var(--color-text);
+      font-size: $font-size--xxxxl;
+      line-height: 1.5;
+    }
+  }
+}
+
+.title__variant-4 {
+  > h2 {
+    @include title_style-one();
+    @include bp-small();
+
+    padding-right: unset;
+    color: var(--color-text);
+    font-size: $font-size--xxxxl;
+    line-height: 1.5;
+  }
+}
+
+.layout--onecol {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+
+  margin-bottom: 60px;
+}
+
+.layout--twocol-section {
+  > .layout__region--first {
+    @include media-breakpoint-up(sm) {
+      padding-right: 16px;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 60px;
+  }
+
+  > .layout__region--second {
+    @include media-breakpoint-up(sm) {
+      padding-left: 16px;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 60px;
+  }
+}
+
+.layout--threecol-section {
+  > .layout__region--first {
+    @include media-breakpoint-up(sm) {
+      padding-right: 16px;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 60px;
+  }
+
+  > .layout__region--second {
+    @include media-breakpoint-up(sm) {
+      padding-right: 16px;
+      padding-left: 16px;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 60px;
+  }
+
+  > .layout__region--three {
+    @include media-breakpoint-up(sm) {
+      padding-left: 16px;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 60px;
+  }
+}
+
+// Layout builder related clases.
+.space-small {
+  @include media-breakpoint-up(md) {
+    margin-right: 30px;
+  }
+}
+
+.space-medium {
+  @include media-breakpoint-up(md) {
+    margin-right: 40px;
+  }
+}
+
+.space-large {
+  @include media-breakpoint-up(md) {
+    margin-right: 60px;
+  }
+}
+
+.layout {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 90px;
+  }
+
+  @include make-container-max-widths();
+
+  margin-right: auto;
+  margin-left: auto;
+
+  &.f-container {
+    max-width: 100% !important;
+    padding-right: unset !important;
+    padding-left: unset !important;
+  }
+}
+
+.node--type-landing-page .layout {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.equal {
+  .layout__region {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+// Border classes for layouts.
+.border-top {
+  border-top: 1px solid var(--color--smoke);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color--smoke);
+}
+
+.border-between.layout--twocol-section {
+  .layout__region--first {
+    @include media-breakpoint-up(md) {
+      border-right: 1px solid var(--color--smoke);
+      border-bottom: 0;
+    }
+
+    border-bottom: 1px solid var(--color--smoke);
+  }
+}
+
+.center-aligned {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.border-between.layout--threecol-section {
+  .layout__region--first,
+  .layout__region--second {
+    @include media-breakpoint-up(md) {
+      border-right: 1px solid var(--color--smoke);
+      border-bottom: 0;
+    }
+
+    border-bottom: 1px solid var(--color--smoke);
+  }
+}
+
+.link__variant-1,
+.link__variant-2 {
+  .more-link {
+    margin-top: 30px;
+
+    > a {
+      position: relative;
+      display: inline-block;
+      padding-right: 30px;
+      cursor: pointer;
+      font: $font-size--l $font-lato--heavy;
+
+      &::after {
+        position: absolute;
+        right: 5px;
+        width: 20px;
+        height: 24px;
+        content: '';
+        transition: 0.25s right ease;
+        background: url('../../assets/images/cta-link.svg') no-repeat center center;
+        background-size: 14px;
+      }
+
+      &:hover {
+        &::after {
+          right: 0;
+          transition: 0.25s right ease;
+        }
+      }
+    }
+  }
+}
+
+.link__variant-2 {
+  .more-link {
+    text-align: right;
+  }
+}
+
+// Spacing for dfp blocks.
+.block-dfp {
+  @media screen and (max-width: 330px) {
+    iframe {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.align-left {
+  margin: auto;
+
+  @include media-breakpoint-up(md) {
+    float: left;
+    margin-right: 20px;
+
+    img {
+      float: left;
+      width: 350px;
+    }
+
+    &:last-child {
+      float: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.align-right {
+  margin: auto;
+
+  @include media-breakpoint-up(md) {
+    float: right;
+    margin-left: 20px;
+
+    img {
+      float: right;
+      width: 350px;
+    }
+
+    &:last-child {
+      float: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+}
+
+.align-center {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+.block-inline-blocktext {
+  li {
+    display: flex;
+
+    &::before {
+      content: '\25A0';
+      color: var(--color-primary);
+      display: inline-block;
+      font-size: 10px;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.page-404 {
+  h2 {
+    color: red;
+    margin-bottom: 32px;
+  }
+
+  text-align: center;
+  padding: 90px 0;
+}
+
+.header__ad-space {
+  .block-dfp {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-event-card {
+  .event_card {
+    background-size: cover;
+    text-align: center;
+    padding: 30px 30px;
+    height: 350px;
+    max-width: 100%;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      max-width: 400px;
+    }
+
+    a,
+    span {
+      color: var(--color--white);
+      display: flex;
+      justify-content: center;
+    }
+
+    .title {
+      a {
+        font: $font--heavy $font-size--medium $font-lato--heavy;
+        text-transform: uppercase;
+      }
+    }
+
+    .subtitle {
+      margin: 75px auto 20px;
+      width: 70%;
+      text-align: center;
+    }
+
+    .date,
+    .subtitle {
+      font: $font--medium $font-size--l $font-lato--medium;
+    }
+
+    .cta {
+      margin-top: 50px;
+      border-radius: 4px;
+
+      a {
+        padding: 10px;
+        font: $font--heavy $font-size--l $font-lato--heavy;
+      }
+    }
+  }
+}

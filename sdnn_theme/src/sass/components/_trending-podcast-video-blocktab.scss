@@ -1,0 +1,47 @@
+.view-trending-podcasts,
+.view-trending-videos {
+  .trending {
+    margin-bottom: 20px;
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .media-image {
+        flex: 0 0 40%;
+
+        .field--name-image {
+          height: 170px;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .title-span {
+        flex: 0 0 55%;
+
+        span {
+          p {
+            color: var(--color-primary);
+            font: $font--semibold $font-size--l $font-lato--semibold;
+            margin-bottom: 10px;
+          }
+        }
+
+        .link-title {
+          a {
+            font: $font--regular $font-size--xxxl $font-lato--light;
+
+            &:hover {
+              color: var(--color--text);
+              font-weight: $font--semibold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

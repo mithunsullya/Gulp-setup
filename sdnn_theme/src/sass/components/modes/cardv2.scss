@@ -1,0 +1,21 @@
+@import "../../settings/settings";
+
+.node--view-mode-card-v2 {
+  .media {
+    margin-bottom: 5px;
+  }
+
+  time {
+    margin-bottom: 5px;
+    color: var(--color--grey);
+    font-size: $font-size--s;
+  }
+
+  .title {
+    font-size: $font-size--xl;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+}

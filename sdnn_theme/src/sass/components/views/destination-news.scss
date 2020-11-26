@@ -1,0 +1,18 @@
+@import "../../settings/settings";
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.view-stories-destination {
+  .node--view-mode-card-v7 {
+    @include media-breakpoint-up(md) {
+      display: flex;
+
+      .field--name-field-image-media {
+        flex: 0 0 240px;
+        max-width: 240px;
+        margin-right: 18px;
+      }
+    }
+  }
+}

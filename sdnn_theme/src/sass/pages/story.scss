@@ -1,0 +1,202 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.node--story-page {
+  margin-top: 60px;
+
+  .block {
+    > h2 {
+      margin-bottom: 16px;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+      color: var(--color--text);
+      border-bottom: 1px solid var(--color--smoky-grey);
+      font-family: $font-lato--regular;
+      font-size: $font-size--xxl;
+      display: inline-block;
+    }
+  }
+
+  .layout__region--first {
+    @include media-breakpoint-up(sm) {
+      display: block;
+    }
+
+    display: none;
+
+    > .block {
+      margin-bottom: 40px;
+      padding-right: 65px;
+    }
+  }
+
+  .layout__region--second {
+    @include media-breakpoint-up(md) {
+      padding-right: 60px;
+    }
+
+    padding-right: 0;
+  }
+
+  .webform-submission-subscription-form-add-form .form-checkboxes > .form-item {
+    flex: 0 0 100%;
+  }
+
+  .video-embed-field-responsive-video {
+    &::after {
+      padding: 150px;
+    }
+
+    iframe {
+      margin: 50px 0;
+    }
+  }
+}
+
+.block-field-blocknodenews-articletitle,
+.block-field-blocknodevideotitle,
+.block-field-blocknodepodcasttitle,
+.block-field-blocknodepagetitle {
+  margin-bottom: 30px;
+  padding-top: 40px;
+  border-top: 10px solid var(--color-primary);
+
+  .field--name-title {
+    @include media-breakpoint-up(md) {
+      font: $font-size--title $font-lato--bold;
+    }
+
+    margin-bottom: 30px;
+    color: var(--color-primary);
+    font: $font-size--xxxxl $font-lato--bold;
+    line-height: 1.2;
+  }
+}
+
+.block-field-blocknodenews-articlecreated,
+.block-field-blocknodevideocreated,
+.block-field-blocknodepodcastcreated {
+  display: inline-block;
+
+  .field {
+    position: relative;
+    padding-right: 20px;
+    color: var(--color--smoke);
+    font-family: $font-helvitica-regular;
+
+    &::after {
+      position: absolute;
+      top: 3px;
+      width: 1px;
+      height: 18px;
+      margin: 0 10px;
+      content: '';
+      background-color: var(--color--smoke);
+    }
+  }
+}
+
+.block-field-blocknodenews-articlefield-authors-ref,
+.block-field-blocknodevideofield-authors-ref,
+.block-field-blocknodepodcastfield-authors-ref {
+  display: inline-block;
+
+  a {
+    color: var(--color--smoke);
+    font-family: $font-helvitica-regular;
+
+    &::after {
+      content: ',';
+    }
+
+    &:last-child {
+      &::after {
+        content: '';
+      }
+    }
+  }
+
+  .author {
+    a {
+      margin-right: 0;
+
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
+
+.block-field-blocknodenews-articlefield-image-media,
+.block-field-blocknodevideofield-image-media,
+.block-field-blocknodevideofield-video-media,
+.block-field-blocknodepodcastfield-image-media,
+.block-field-blocknodepodcastfield-video-media {
+  margin: 20px 0 40px;
+
+  img {
+    width: 100%;
+  }
+
+  .field--name-field-media-oembed-video {
+    iframe {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+.block-field-blocknodenews-articlebody,
+.block-field-blocknodevideobody,
+.block-field-blocknodepodcastbody,
+.block-field-blocknodepagebody {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+  }
+
+  margin-bottom: 40px;
+
+  .field--name-body {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--color--smoke);
+
+    iframe {
+      width: 100%;
+    }
+
+    img {
+      width: -webkit-fill-available;
+      max-width: 100%;
+
+      @include media-breakpoint-up(md) {
+        width: auto;
+      }
+    }
+
+    ul {
+      li {
+        position: relative;
+        padding: 0 0 0 20px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 10px;
+          width: 7px;
+          height: 7px;
+          background-color: var(--color-primary);
+        }
+      }
+    }
+  }
+}
+
+.block-field-blocknodepagebody {
+  .field--name-body {
+    border: none;
+  }
+}

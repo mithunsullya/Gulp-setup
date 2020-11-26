@@ -1,0 +1,32 @@
+@import "../../settings/settings";
+
+.node--view-mode-compact {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color--smoky-grey);
+
+  .header {
+    margin-bottom: 5px;
+    color: var(--color--text);
+    font-family: $font-lato--regular;
+    font-size: $font-size--xs;
+    background: transparent;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+
+  .title * {
+    color: var(--color-text);
+    font-family: $font-lato--regular;
+    font-size: $font-size--l;
+    font-weight: 400;
+
+    &:hover {
+      transition: text-shadow 0.3s;
+      border-bottom: 2px solid var(--color-primary);
+      text-shadow: 0.5px 0.5px var(--color-text);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Magazine block template.
+ */
+#}
+{% extends "block.html.twig" %}
+{% block content %}
+  {{ attach_library("sdnn_theme/magazine-block") }}
+  <div class="magazine_block">
+    <div class="magazine_block__image">
+      {{ content.field_cover_image }}
+    </div>
+    <div class="magazine_block__links">
+      <div>
+        <a href="{{ content.field_issues[0]['#url'] }}">
+          Issues
+        </a>
+      </div>
+      <div>
+        <a href="{{ content.field_newsletter[0]['#url'] }}">
+          Newsletter
+        </a>
+      </div>
+      <div>
+        <a href="{{ content.field_subscribe[0]['#url'] }}">
+          Subscribe
+        </a>
+      </div>
+      <div>
+        <a href="{{ content.field_education[0]['#url'] }}">
+          Education
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

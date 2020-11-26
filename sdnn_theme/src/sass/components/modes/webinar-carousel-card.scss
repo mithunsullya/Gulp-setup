@@ -1,0 +1,32 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-webinar-carousel {
+  * a {
+    font-weight: $font--bold;
+    font-size: $font-size--xl;
+  }
+
+  @include media-breakpoint-up(md) {
+    color: var(--color--white);
+
+    * a {
+      color: var(--color--white);
+      font: $font--regular $font-size--xl $font-lato--regular;
+    }
+  }
+
+  .title > a {
+    color: var(--color--text);
+  }
+
+  &:hover {
+    .title > a,
+    .subtitle,
+    .subtitle * a {
+      font-weight: $font--semibold;
+    }
+  }
+}

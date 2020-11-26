@@ -1,0 +1,46 @@
+.event__location {
+  position: relative;
+  margin-bottom: 90px;
+
+  .content__location {
+    @include media-breakpoint-up(md) {
+      padding: 40px 60px;
+      width: auto;
+    }
+
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 650px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+
+    * {
+      color: var(--color--white);
+    }
+
+    .title-v1 {
+      color: var(--color--white);
+      border-bottom-color: var(--color--white);
+    }
+
+    .field--name-field-event-hotel {
+      font: $font--bold $font-size--xxl $font-lato--bold;
+      margin-bottom: 8px;
+    }
+
+    .field--name-field-event-hotel-details > p {
+      margin-bottom: 12px;
+      font-family: $font-lato--medium;
+    }
+  }
+
+  .default__media {
+    position: relative;
+    background: var(--color-prmary);
+    width: 100%;
+    height: 400px;
+  }
+}

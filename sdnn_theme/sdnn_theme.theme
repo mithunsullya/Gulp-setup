@@ -1,0 +1,183 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Stamats DNN Theme theme.
+ */
+
+use Drupal\file\Entity\File;
+use Drupal\dfp\Entity\Tag;
+
+/**
+ * Implements theme_form_system_theme_settings_alter().
+ */
+function sdnn_theme_form_system_theme_settings_alter(&$form, &$form_state) {
+  $form['header_configurations'] = [
+    '#type' => 'details',
+    '#title' => 'Header branding configuration for mobile view',
+    '#open' => TRUE,
+  ];
+  $form['header_configurations']['mobile_branding'] = [
+    '#type' => 'managed_file',
+    '#title' => 'Header logo',
+    '#upload_location' => 'public://',
+    '#upload_validators' => [
+      'file_validate_extensions' => ['gif png jpg jpeg svg'],
+    ],
+    '#default_value' => theme_get_setting('mobile_branding'),
+  ];
+  $form['footer_configurations'] = [
+    '#type' => 'details',
+    '#title' => 'Footer branding configuration',
+    '#open' => TRUE,
+  ];
+  $form['footer_configurations']['footer_logo'] = [
+    '#type' => 'managed_file',
+    '#title' => 'Footer logo',
+    '#upload_location' => 'public://',
+    '#upload_validators' => [
+      'file_validate_extensions' => ['gif png jpg jpeg svg'],
+    ],
+    '#default_value' => theme_get_setting('footer_logo'),
+  ];
+  $form['social_link_configurations'] = [
+    '#type' => 'details',
+    '#title' => 'Social links configuration',
+    '#open' => TRUE,
+  ];
+  $form['social_link_configurations']['facebook_link'] = [
+    '#type' => 'url',
+    '#title' => 'Facebook link',
+    '#default_value' => theme_get_setting('facebook_link'),
+  ];
+  $form['social_link_configurations']['instagram_link'] = [
+    '#type' => 'url',
+    '#title' => 'Instagram Link',
+    '#default_value' => theme_get_setting('instagram_link'),
+  ];
+  $form['social_link_configurations']['linkedin_link'] = [
+    '#type' => 'url',
+    '#title' => 'LinkedIn Link',
+    '#default_value' => theme_get_setting('linkedin_link'),
+
+  ];
+  $form['social_link_configurations']['pintrest_link'] = [
+    '#type' => 'url',
+    '#title' => 'Pintrest Link',
+    '#default_value' => theme_get_setting('pintrest_link'),
+  ];
+  $form['social_link_configurations']['twitter_link'] = [
+    '#type' => 'url',
+    '#title' => 'Twitter Link',
+    '#default_value' => theme_get_setting('twitter_link'),
+  ];
+}
+
+/**
+ * Implements theme_preprocess_page().
+ */
+function sdnn_theme_preprocess_page(&$variables) {
+  $footer_logo_id = theme_get_setting('footer_logo');
+  if (!empty($footer_logo_id)) {
+    $file = File::load($footer_logo_id[0]);
+    $file_uri = $file->getFileUri();
+    $url = file_create_url($file_uri);
+    $variables['footer_logo'] = $url;
+  }
+  else {
+    $variables['footer_logo'] = '/' . \Drupal::theme()->getActiveTheme()->getPath() . '/assets/images/placeholder_logo.svg';
+  }
+  $mobile_logo_id = theme_get_setting('mobile_branding');
+  if (!empty($mobile_logo_id)) {
+    $file = File::load($mobile_logo_id[0]);
+    $file_uri = $file->getFileUri();
+    $url = file_create_url($file_uri);
+    $variables['mobile_branding'] = $url;
+  }
+  else {
+    $variables['mobile_branding'] = '/' . \Drupal::theme()->getActiveTheme()->getPath() . '/assets/images/placeholder_logo.svg';
+  }
+  $variables['facebook_link'] = theme_get_setting('facebook_link');
+  $variables['instagram_link'] = theme_get_setting('instagram_link');
+  $variables['linkedin_link'] = theme_get_setting('linkedin_link');
+  $variables['pintrest_link'] = theme_get_setting('pintrest_link');
+  $variables['twitter_link'] = theme_get_setting('twitter_link');
+}
+
+/**
+ * Implements theme_preprocess_node__news_article__categorized_topic().
+ */
+function sdnn_theme_preprocess_node__news_article__categorized_topic(&$variables) {
+  $node = $variables['node'];
+  $vid = array_values($node->field_topic_taxo->getSettings()['handler_settings']['target_bundles'])[0];
+  $vocabulary = \Drupal::entityTypeManager()->getStorage('taxonomy_vocabulary')->load($vid);
+  $variables['vocabulary_name'] = $vocabulary->label();
+}
+
+/**
+ * Implements hook_theme_suggestions_user_alter().
+ */
+function sdnn_theme_theme_suggestions_user_alter(&$suggestions, $variables, $hook) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestions[] = 'user__mode__' . $view_mode;
+}
+
+/**
+ * Implements theme_page_attachment_alter().
+ */
+function sdnn_theme_page_attachments_alter(&$page) {
+  $viewport = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'name' => 'viewport',
+      'id' => 'viewport',
+      'content' => 'width=device-width',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$viewport, 'viewport'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function sdnn_theme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__node__' . $content_type;
+  }
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  if (in_array($route_name, ['user.login', 'user.pass', 'user.register'])) {
+    if ($route_name == 'user.login' || $route_name == 'user.pass') {
+      $suggestions[] = 'page__login';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function sdnn_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (!empty($variables['elements']['content']['#block_content'])) {
+    $block = $variables['elements']['content']['#block_content'];
+    $suggestions[] = 'block__' . $block->bundle();
+    $view_mode = $variables['elements']['#configuration']['view_mode'];
+    if (!empty($view_mode)) {
+      $suggestions[] = 'block__' . $block->bundle() . '__' . $view_mode;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function sdnn_theme_preprocess_views_view_unformatted(&$variables) {
+  // @todo: Update the name as per the DFP tag being used.
+  // Refer: "admin/structure/dfp/tags" for a list of available tags."
+  $tag = Tag::load('specbee_test_ad_rsb_300x250');
+  if ($tag) {
+    $block_id = 'dfp_ad:' . $tag->uuid();
+    $variables['dfp_ad_300_250'] = $block_id;
+  }
+}

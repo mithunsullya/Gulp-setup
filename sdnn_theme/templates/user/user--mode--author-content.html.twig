@@ -1,0 +1,36 @@
+{{ attach_library("sdnn_theme/author") }}
+<h2 class="author-heading">
+  {{ "Read More Articles by "|t }}
+    {{ content.field_first_name.0 }} {{ content.field_last_name.0 }}
+</h2>
+<div class="author">
+  {% if content.user_picture|render %}
+    <div class="author__image">
+      {{ content.user_picture }}
+    </div>
+  {% endif %}
+  <div class="author__info">
+    {% if content.field_first_name.0 or content.field_last_name.0 or content.field_title.0 %}
+      <div class="author__details-wrapper">
+        <div class="author__header">
+          {% if content.field_first_name.0 | render %}
+            {{ content.field_first_name.0 }}
+          {% endif %}
+          {% if content.field_last_name.0 | render %}
+            {{ content.field_last_name.0 }}
+          {% endif %}
+          {% if content.field_title.0 %}
+            <div class="author__title">
+              {{ content.field_title.0 }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if content.field_short_bio |render %}
+      <div class="author__short-bio">
+        {{ content.field_short_bio }}
+      </div>
+    {% endif %}
+  </div>
+</div>

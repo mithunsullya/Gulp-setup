@@ -1,0 +1,39 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-card-v6 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--color--smoky-grey);
+
+  @include media-breakpoint-up(md) {
+    border-bottom: none;
+  }
+
+  > .field--name-field-image-media {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      margin-right: 18px;
+      flex: 0 0 180px;
+      max-width: 180px;
+    }
+  }
+
+  > h4 {
+    flex: 1;
+    font-family: $font-lato--semibold;
+    font-size: $font-size--xl;
+    margin-bottom: 16px;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+}

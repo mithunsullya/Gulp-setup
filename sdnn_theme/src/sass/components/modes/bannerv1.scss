@@ -1,0 +1,13 @@
+@import "../../settings/settings";
+
+.node--view-mode-banner-v1 {
+  .title {
+    margin: 16px 0;
+    font-family: $font-lato--semibold;
+    font-size: $font-size--medium;
+
+    a {
+      color: var(--color-black);
+    }
+  }
+}

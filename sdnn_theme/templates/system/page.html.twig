@@ -1,0 +1,116 @@
+{#
+/**
+ * @file
+ * SDNN theme layout implementation.
+ */
+#}
+<header class="header" id="header" aria-label="{{ 'Site header'|t }}">
+	<div class="header__navigation d-none">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-11">
+					{{ page.navigation }}
+				</div>
+				{# @todo replace this with search form #}
+				<div class="col">
+					<button id="search-trigger"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		{% if page.pre_header %}
+			<div class="row align-items-center justify-content-center">
+				<div class="preheader">
+					{{ page.pre_header }}
+				</div>
+			</div>
+		{% endif %}
+		<div class="row align-items-center justify-content-between">
+			<div class="header__branding col-lg-4 col-sm-9 col-9">
+				<span class="d-none desktop-branding">{{ page.branding }}</span>
+				<span class="d-block d-lg-none mobile-branding">
+					<a href="/">
+						<img src={{ mobile_branding }}>
+					</a>
+				</span>
+			</div>
+			{% if page.header_ad_space %}
+				<div class="header__ad-space col-lg-8">
+					{{ page.header_ad_space }}
+				</div>
+			{% endif %}
+			<div aria-label="Mobile menu" class="hamburger col-xs-3 col-3 d-lg-none"></div>
+		</div>
+		{{ page.post_header }}
+		<div class="mobile__navigation d-none d-lg-none">
+			<div class="close-button">
+				<span class="menu--close-button"></span>
+			</div>
+			{{ page.navigation }}
+		</div>
+	</div>
+</header>
+<main class="main" id="main" role="main" aria-label="{{ 'Main content'|t }}">
+	{% block content %}
+		<div class="container">
+			{{ page.content }}
+		</div>
+	{% endblock %}
+</main>
+{% if page.pre_footer %}
+	<section id="prefooter">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="prefooter">
+					{{ page.pre_footer }}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+<footer class="footer" id="footer" aria-label="{{ 'Site footer'|t }}" role="contentinfo">
+	<div class="footer__primary">
+		<div class="container">
+			<div class="row align-items-center justify-content-between">
+				<div class="branding col-sm-6 col-12">
+					{% if footer_logo %}
+						<a href="{{ url('<front>') }}">
+							<img src={{ footer_logo }}>
+						</a>
+					{% endif %}
+				</div>
+				{% if facebook_link or instagram_link or linkedin_link or pintrest_link or twitter_link %}
+					<ul class="social-links col-sm-6 col-12">
+						{% if facebook_link %}
+							<li>
+								<a href="{{ facebook_link }}" class="social-links--facebook"></a>
+							</li>
+						{% endif %}
+						{% if instagram_link %}
+							<li>
+								<a href="{{ instagram_link }}" class="social-links--instagram"></a>
+							</li>
+						{% endif %}
+						{% if linkedin_link %}
+							<li>
+								<a href="{{ linkedin_link }}" class="social-links--linkedin"></a>
+							</li>
+						{% endif %}
+						{% if pintrest_link %}
+							<li>
+								<a href="{{ pintrest_link }}" class="social-links--pintrest"></a>
+							</li>
+						{% endif %}
+						{% if twitter_link %}
+							<li>
+								<a href="{{ twitter_link }}" class="social-links--twitter"></a>
+							</li>
+						{% endif %}
+					</ul>
+				{% endif %}
+			</div>
+			{{ page.post_footer }}
+		</div>
+	</div>
+</footer>

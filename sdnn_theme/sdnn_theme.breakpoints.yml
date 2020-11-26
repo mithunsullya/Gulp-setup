@@ -1,0 +1,13 @@
+sdnn_theme.mobile:
+  label: Mobile
+  mediaQuery: '(min-width: 300px) and (max-width: 520px)'
+  weight: 0
+  multipliers:
+    - 1x
+
+sdnn_theme.desktop:
+  label: Desktop
+  mediaQuery: '(min-width: 520px)'
+  weight: 1
+  multipliers:
+    - 1x

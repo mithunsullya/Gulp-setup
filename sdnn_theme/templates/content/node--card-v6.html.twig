@@ -1,0 +1,9 @@
+{% extends "node.html.twig" %}
+
+{% block content %}
+	{{ attach_library("sdnn_theme/cardv6") }}
+	{{ content.field_image_media }}
+	<h4 class="title">
+		<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+	</h4>
+{% endblock %}

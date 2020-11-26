@@ -1,0 +1,18 @@
+{% extends "page.html.twig" %}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/listing") }}
+  <div class="container l-two-col content-list">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="title__variant-1">
+          <h2>Trending Stories</h2>
+          {{ page.content }}
+        </div>
+      </div>
+      <aside class="col-sm-4 sidebar">
+        {{ page.sidebar }}
+      </aside>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+@import "../../settings/settings";
+
+.node--view-mode-banner-v4 {
+  .meta {
+    margin: 8px 0;
+    font-size: $font-size--xs;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+
+  .title {
+    font-size: $font-size--xxl;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+}

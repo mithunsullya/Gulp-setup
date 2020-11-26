@@ -1,0 +1,144 @@
+{{ attach_library("sdnn_theme/event") }}
+
+<div class="node node--event">
+  {% if node.field_billboard_comp.entity.field_image_media| view | render %}
+    <div class="event__banner">
+    {% else %}
+    <div class="event__banner default__banner">
+  {% endif %}
+    {% if node.field_billboard_comp.entity.field_image_media| view | render %}
+      {{ node.field_billboard_comp.entity.field_image_media| view }}
+    {% endif %}
+
+    <div class="content__banner text-center">
+      {% if node.field_event_start_date.value or  node.field_event_end_date.value %}
+        <time>
+          {% if node.field_event_start_date.value %}
+            {{ node.field_event_start_date.value | date('F j') }}
+          {% endif %}
+          {% if node.field_event_start_date.value %}
+              {{ node.field_event_end_date.value | date('- j, Y') }}
+          {% endif %}
+        </time>
+      {% endif %}
+      {% if node.field_billboard_comp.entity.field_pre_header %}
+        {{ node.field_billboard_comp.entity.field_pre_header|view }}
+      {% endif %}
+      {% if node.field_billboard_comp.entity.field_title %}
+        {{ node.field_billboard_comp.entity.field_title|view }}
+      {% endif %}
+      {% if node.field_billboard_comp.entity.field_abstract %}
+        {{ node.field_billboard_comp.entity.field_abstract|view }}
+      {% endif %}
+      {% if node.field_billboard_comp.entity.field_cta %}
+        {{ node.field_billboard_comp.entity.field_cta|view }}
+      {% endif %}
+    </div>
+  </div>
+ 
+  {% if content.field_event_attend|render or node.field_event_inquiry_link.0.url|render %}
+    <div class="layout--one-col event__attend">
+      <div class="attend">
+        <h3 class="title"> Why should you attend </h2>
+        {% if content.field_event_attend %}
+          {{ content.field_event_attend }}
+        {% endif %}
+        {% if node.field_event_inquiry_link.0.url and node.field_event_inquiry_link.title %}
+          <div class="button">
+            <a href={{ node.field_event_inquiry_link.0.url }} class="button--link"> {{ node.field_event_inquiry_link.title }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if content.field_event_reason_ref | render %}
+    <div class="layout--one-col event__reason">
+      {{ content.field_event_reason_ref }}
+    </div>
+  {% endif %}
+
+  {% if content.field_event_hotel_media |render or content.field_event_hotel|render or  content.field_event_hotel_details|render%}
+    <div class="layout--one-col event__location">
+      {% if content.field_event_hotel_media |render %}
+        {{ content.field_event_hotel_media }}
+      {% else %}
+        <div class="location__media"></div>
+      {% endif %}
+      
+      {% if content.field_event_hotel|render or  content.field_event_hotel_details|render %}
+        <div class="content__location">
+          <h2 class="title-v1"> The hotel </h2>
+          {% if content.field_event_hotel |render %}
+            {{ content.field_event_hotel }}
+          {% endif %}
+          {% if content.field_event_hotel_details | render %}
+            {{ content.field_event_hotel_details }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="container">
+    {% if content.field_event_agenda|render or content.field_event_files|render %}
+      <div class="layout--one-col event__agenda">
+        <h2 class="title-v1"> Agenda </h2>
+        {% if content.field_event_agenda|render %}
+          {{ content.field_event_agenda }}
+        {% endif %}
+        {% if content.field_event_files|render %}
+          {{ content.field_event_files }}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if content.field_event_speakers|render or content.field_event_speaker_information|render %}
+      <div class="layout--one-col event__speaker">
+        <h2 class="title-v1"> Speaker </h2>
+        {% if content.field_event_speakers|render %}
+          {{ content.field_event_speakers }}
+        {% endif %}
+        {% if content.field_event_speaker_information|render %}
+          {{ content.field_event_speaker_information }}
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if content.field_event_testimonial_para|render|striptags|trim %}
+    <div class="layout--one-col event__testimonials">
+      <div class="container">
+        <h2 class="testimonials-heading"> TESTIMONIALS </h2>
+        {{ content.field_event_testimonial_para }}
+      </div>
+    </div>
+  {% endif %}
+  
+  <div class="container">
+    {% if content.field_event_supplier_info|render or content.field_event_supplier_info_footer|render %}
+      <div class="layout--one-col event__supplier">
+        <h2 class="title-v1"> Supplier information </h2>
+        {{ content.field_event_supplier_info }}
+        {{content.field_event_supplier_info_footer}}
+        {% if node.field_event_supplier_mail.value|render %}
+          <div class="email">
+            <a href='mailto: {{ node.field_event_supplier_mail.value }}' class="button--link">Email Us</a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if content.field_event_sponsors|render %}
+      <div class="layout--one-col event__sponsors">
+        <h2 class="title-v1"> Thanks to our sponsors </h2>
+        {{ content.field_event_sponsors }}
+      </div>
+	  {% endif %}
+
+    {% if content.field_event_footer|render %}
+      <div class="layout--one-col event__footer">
+        {{ content.field_event_footer }}
+      </div>
+	  {% endif %}
+  </div>
+</div>

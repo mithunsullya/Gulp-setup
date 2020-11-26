@@ -1,0 +1,16 @@
+{% extends "node.html.twig" %}
+{% block content %}
+  {{ attach_library("sdnn_theme/bannerv4") }}
+  {{ content.field_image_media }}
+  <div class="meta">
+    <span>{{ content.field_topic_taxo.0 }}</span>
+      |
+      <span>
+        <time>{{ node.created.value|date('m/d/Y') }}</time>
+      </span>
+    </span>
+  </div>
+  <h3 class="title">
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  </h3>
+{% endblock %}

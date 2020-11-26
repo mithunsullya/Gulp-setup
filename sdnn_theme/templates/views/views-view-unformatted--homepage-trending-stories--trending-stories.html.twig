@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+{% for row in rows %}
+  {%
+    set row_classes = [default_row_class ? 'views-row']
+  %}
+  {% if (loop.index == 2) %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      {% if dfp_ad_300_250 %}
+        <div class="ad__block">
+          {{drupal_block(dfp_ad_300_250)}}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div{{ row.attributes.addClass(row_classes) }}>
+    {{- row.content -}}
+  </div>
+{% endfor %}

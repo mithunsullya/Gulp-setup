@@ -1,0 +1,19 @@
+{{ attach_library("sdnn_theme/instagram") }}
+<div class="instagram__wrapper">
+  <div class="instagram">
+    <div class="instagram-feeds">
+      <div class="instagram-profile">
+        <div class="profile__logo">
+          <img src="{{ instagram_profile_logo }}" alt= {{ 'Instagram profile logo'|t }} />
+        </div>
+        <div class="profile__name">
+          {{ instagram_profile_title|t }}
+        </div>
+      </div>
+      <div class="instagram__logo">
+        <img src="/profiles/custom/sdnn/themes/sdnn_theme/assets/images/instagram_logo.svg" alt={{ 'Instagram logo'|t }} />
+      </div>
+    </div>
+    <div class="instagram-feed"></div>
+  </div>
+</div>

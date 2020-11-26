@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - blocktabs.blocktabs.places_listing
+  module:
+    - blocktabs
+    - system
+  theme:
+    - sdnn_theme
+id: blocktabsplaceslisting
+theme: sdnn_theme
+region: content
+weight: -2
+provider: null
+plugin: 'blocktabs_block:places_listing'
+settings:
+  id: 'blocktabs_block:places_listing'
+  label: 'Blocktabs:Places Listing'
+  provider: blocktabs
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false

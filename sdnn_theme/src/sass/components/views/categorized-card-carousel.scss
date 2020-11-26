@@ -1,0 +1,98 @@
+// @file
+// Stylings for the categorized articles (slider).
+
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.view-id-stories_carousel {
+  .view-content {
+    @include media-breakpoint-up(sm) {
+      overflow: hidden;
+    }
+
+    position: relative;
+  }
+
+  .slick__arrow {
+    @include media-breakpoint-up(sm) {
+      height: 100%;
+
+      &::before,
+      &::after {
+        position: absolute;
+        z-index: -1;
+        width: 105px;
+        height: 100%;
+        content: '';
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      &::after {
+        right: 0;
+      }
+    }
+  }
+
+  .slick-arrow {
+    @include media-breakpoint-up(md) {
+      width: 42px;
+    }
+
+    width: 36px;
+  }
+
+  .slick-list {
+    @include media-breakpoint-up(sm) {
+      width: 140%;
+      margin-left: -20%;
+    }
+  }
+
+  .slick-dots {
+    .slick-active > button::before {
+      color: var(--color-primary);
+    }
+  }
+
+  .slick-prev {
+    @include media-breakpoint-up(md) {
+      left: 30px !important;
+      background-color: var(--color-primary);
+    }
+
+    left: -20px;
+
+    &::before {
+      @include media-breakpoint-up(md) {
+        content: url('../../../assets/previous.svg');
+        opacity: 1;
+      }
+
+      content: url('../../../assets/left-arrow.svg');
+      opacity: 0.3;
+      color: var(--color-primary);
+    }
+  }
+
+  .slick-next {
+    @include media-breakpoint-up(md) {
+      right: 30px !important;
+      background-color: var(--color-primary);
+    }
+
+    right: -8px;
+
+    &::before {
+      @include media-breakpoint-up(md) {
+        content: url('../../../assets/next.svg');
+        opacity: 1;
+      }
+
+      content: url('../../../assets/right-arrow.svg');
+      opacity: 0.3;
+      color: var(--color-primary);
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.webform-submission-subscription-form-add-form,
+.webform-submission-subscription-update-form-form {
+  @include media-breakpoint-up(md) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  max-width: 450px;
+  padding: 20px;
+  background-color: #e6e6e6;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  .form-header-title {
+    @include title_style();
+
+    text-transform: capitalize !important;
+    font-family: $font-lato--semibold;
+  }
+
+  .form-item {
+    margin: 0 0 10px 0;
+
+    label {
+      margin: unset;
+      font: $font--regular $font-size--s $font-helvitica-regular !important;
+      display: inline !important;
+    }
+
+    label.option {
+      margin-left: 10px;
+      display: inline;
+    }
+
+    .form-select {
+      padding: 4px 12px;
+      font: $font--regular $font-size--s $font-helvitica-regular;
+      color: var(--color--grey);
+      background: url('../assets/dropdown.svg') no-repeat right var(--color--white) !important;
+      background-size: 15px !important;
+      background-position-x: 95% !important;
+      appearance: none;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    .form-select {
+      width: 100%;
+      height: 40px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+
+      &::placeholder {
+        font: $font--regular $font-size--s $font-helvitica-regular;
+        color: var(--color--grey);
+      }
+    }
+
+    .webform-element-description,
+    i.webform-section-title {
+      margin: 5px;
+      color: var(--color--grey);
+      font: $font--regular $font-size--xxs $font-helvitica-regular;
+    }
+
+    i.webform-section-title {
+      font-style: italic;
+    }
+
+    .webform-flexbox {
+      display: flex;
+      flex: 0 0 100%;
+
+      &:nth-child(2) {
+        .webform-flex--1 {
+          &:nth-child(1) {
+            flex: 0 0 60%;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .form-checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      > .form-item {
+        display: flex;
+        flex: 0 0 45%;
+
+        > input {
+          flex: 0 0 15px;
+        }
+      }
+    }
+  }
+
+  .form-submit {
+    @include button_filled();
+  }
+}
+
+.layout--twocol-section--50-50 {
+  .webform-submission-subscription-form-add-form {
+    max-width: unset;
+  }
+}
+
+.layout--twocol-section--33-67,
+.layout--twocol-section--67-33,
+.layout--twocol-section--25-75,
+.layout--twocol-section--75-25,
+.col-sm-4 {
+  .webform-submission-subscription-form-add-form {
+    .form-checkboxes {
+      display: block;
+    }
+  }
+}

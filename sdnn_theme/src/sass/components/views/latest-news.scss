@@ -1,0 +1,54 @@
+// @file
+// Latest news view component
+
+@import "../../settings/settings";
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.view-homepage-featured-stories {
+  > .view-content {
+    margin-bottom: 16px;
+
+    .views-row {
+      @include media-breakpoint-up(md) {
+        margin-bottom: unset;
+      }
+
+      margin-bottom: 32px;
+    }
+
+    .field--name-field-teaser {
+      font-family: $font-helvitica-regular;
+    }
+  }
+
+  .attachment-after {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    .view-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .views-row {
+        @include media-breakpoint-up(md) {
+          flex: 0 1 50%;
+          max-width: calc(50% - 15px);
+          margin-bottom: unset;
+        }
+
+        flex: 0 1 100%;
+        margin-bottom: 32px;
+
+        &:last-child {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}

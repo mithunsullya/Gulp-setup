@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Media with sidebar text block template.
+ */
+#}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/media-sidebar-text") }}
+
+  {% if content.field_orientation['#items'].getString() is not null %}
+    {% set orientation = content.field_orientation['#items'].getString() %}
+  {% else %}
+    {% set orientation = 'Left' %}
+  {% endif %}
+
+  {% if content.field_media_to_show['#items'].getString() is not null %}
+    {% set media_to_show = content.field_media_to_show['#items'].getString() %}
+  {% else %}
+    {% set media_to_show = 'Image' %}
+  {% endif %}
+
+  {% if orientation == 'Left' or orientation == 'Right' %}
+    <div class="media-sidebar-text">
+      <div class="media-sidebar-text__{{ orientation|lower }}">
+        <div class="media_element">
+          {% if media_to_show == 'Image' %}
+            {{ content.field_image }}
+          {% else %}
+            {{ content.field_video }}
+          {% endif %}
+        </div>
+        <div class="text_element">
+          {% if content.field_title %}
+            {{ content.field_title }}
+          {% endif %}
+          {% if content.field_text %}
+            {{ content.field_text }}
+          {% endif %}
+          {% if content.field_cta %}
+            {{ content.field_cta }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

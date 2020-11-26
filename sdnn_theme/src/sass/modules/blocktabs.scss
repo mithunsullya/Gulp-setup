@@ -1,0 +1,83 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.blocktabs.ui-widget.ui-widget-content {
+  padding: 0;
+  border: none;
+}
+
+.ui-tabs .ui-tabs-panel {
+  padding: 15px 0;
+}
+
+.ui-corner-all {
+  border: none;
+}
+
+.ui-tabs-nav {
+  display: flex;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--color--smoky-grey);
+  background: var(--color--white);
+
+  li {
+    position: relative;
+    flex-basis: 100%;
+    margin: unset !important;
+    padding: 0 !important;
+    text-align: center;
+    outline: none;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 60px;
+      content: '';
+      background-color: var(--color--smoke);
+    }
+
+    &:last-child {
+      &::after {
+        width: 0;
+      }
+    }
+
+    .ui-tabs-anchor {
+      padding: 20px !important;
+      cursor: pointer;
+    }
+
+    a {
+      width: 100%;
+      outline: none;
+      color: var(--color-text) !important;
+      font: $font--semibold $font-size--base $font-lato--semibold;
+
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--xl;
+      }
+    }
+  }
+
+  .ui-corner-top {
+    border-radius: 0;
+  }
+
+  .ui-state-default {
+    color: var(--color-text) !important;
+    border: 1px solid var(--color--white);
+    background-color: var(--color--white);
+  }
+
+  .ui-tabs-active.ui-state-active {
+    border-bottom: 2px solid var(--color-primary) !important;
+    background-color: var(--color--white);
+  }
+
+  .ui-widget-content {
+    background-color: var(--color--white);
+  }
+}

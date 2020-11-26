@@ -1,0 +1,58 @@
+{#
+/*
+ * @file
+ * User field for author view mode.
+ */
+#}
+
+{{ attach_library("sdnn_theme/author") }}
+<div class="author">
+  {% if content.user_picture|render %}
+    <div class="author__image">
+      {{ content.user_picture }}
+    </div>
+  {% endif %}
+  <div class="author__info">
+    <div class="author__heading">
+      {{ "About the author"|t }}
+    </div>
+    {% if content.field_first_name.0 or content.field_last_name.0 or content.field_title.0 %}
+      <div class="author__details-wrapper">
+        <div class="author__header">
+          {% if content.field_first_name.0 | render %}
+            {{ content.field_first_name.0 }}
+          {% endif %}
+          {% if content.field_last_name.0 | render %}
+            {{ content.field_last_name.0 }}
+          {% endif %}
+          {% if content.field_title.0 %}
+            |
+            {{ content.field_title.0 }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+    {% if content.field_short_bio |render %}
+      <div class="author__short-bio">
+        {{ content.field_short_bio }}
+      </div>
+    {% endif %}
+    <div class="author__footer">
+      {% if user.mail.value | render %}
+        <div class="author__email">
+          <a href="mailto:{{ user.mail.value }}">
+            {% include "@sdnn_theme/icons/mail.html.twig" %}
+          </a>
+        </div>
+      {% endif %}
+      {% if content.field_phone | render %}
+        <div class="author__phone">
+          <a href="tel:{{ content.field_phone }}">
+            {% include "@sdnn_theme/icons/phone.html.twig" %}
+          </a>
+        </div>
+      {% endif %}
+      <a class="profile-link" href="{{ path('entity.user.canonical', {'user': user.id}, {}) }}">{{ "Read more articles from this author"|t }}</a>
+    </div>
+  </div>
+</div>

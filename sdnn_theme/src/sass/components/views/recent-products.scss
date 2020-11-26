@@ -1,0 +1,67 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.view-recent-products {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  > .view-content {
+    @include media-breakpoint-up(md) {
+      flex: 0 0 53%;
+      margin-right: 30px;
+      display: flex;
+
+      .title {
+        margin: 8px;
+      }
+    }
+
+    .views-row {
+      @include media-breakpoint-up(md) {
+        margin-bottom: 20px;
+      }
+
+      width: 100%;
+      background-color: var(--color-text);
+      color: var(--color--white);
+      margin-bottom: 30px;
+
+      &:hover {
+        background-color: var(--color-primary);
+        transition: $transition-short;
+      }
+    }
+  }
+
+  .attachment-after {
+    flex: 0 0 44%;
+
+    .view-content {
+      display: flex;
+      flex: unset;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-right: 0;
+
+      .views-row {
+        @include media-breakpoint-up(md) {
+          flex: 0 0 50%;
+          max-width: calc(50% - 12px);
+          margin-right: 20px;
+
+          &:nth-child(2n + 2) {
+            margin-right: unset;
+          }
+        }
+      }
+
+      .title {
+        margin: 0;
+      }
+    }
+  }
+}

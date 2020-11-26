@@ -1,0 +1,13 @@
+{% extends "node.html.twig" %}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/course-card") }}
+  {{ content.field_image_media }}
+  <h5 class="title">
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    <div class="subtitle">
+      {{ content.field_course_date }}
+      {{ content.field_course_presenter }}
+    </div>
+  </h5>
+{% endblock %}

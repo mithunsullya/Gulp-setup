@@ -1,0 +1,35 @@
+@import "../../settings/settings";
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-product-card,
+.node--view-mode-product-banner {
+  .title {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: $font-lato--medium;
+
+    a {
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--s;
+      }
+
+      color: var(--color--white);
+      font-size: $font-size--base;
+    }
+  }
+}
+
+.block-sdnn-blocks-product-card,
+.block-sdnn-blocks-products,
+.block-views-blockrecent-products-recent-products {
+  > h2 {
+    @include title_style-one();
+
+    display: inline-block;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+}

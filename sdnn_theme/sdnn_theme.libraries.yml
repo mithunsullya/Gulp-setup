@@ -1,0 +1,339 @@
+# Global styles
+color:
+  css:
+    theme:
+      dist/css/color.css: {}
+
+bootstrap:
+  css:
+    base:
+      dist/css/vendors/vendors.css: {}
+
+global-styling:
+  css:
+    base:
+      dist/css/main.css: {}
+  js:
+    dist/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+# Block styles
+billboard:
+  css:
+    component:
+      dist/css/blocks/billboard.css: {}
+
+magazine-block:
+  css:
+    component:
+      dist/css/blocks/magazine-block.css: {}
+
+search:
+  css:
+    component:
+      dist/css/blocks/search.css: {}
+  js:
+    dist/js/search.js: {}
+
+text:
+  css:
+    component:
+      dist/css/blocks/text.css: {}
+
+# View modes styles
+bannerv1:
+  css:
+    component:
+      dist/css/components/modes/bannerv1.css: {}
+
+bannerv2:
+  css:
+    component:
+      dist/css/components/modes/bannerv2.css: {}
+
+bannerv3:
+  css:
+    component:
+      dist/css/components/modes/bannerv3.css: {}
+
+bannerv4:
+  css:
+    component:
+      dist/css/components/modes/bannerv4.css: {}
+
+cardv1:
+  css:
+    component:
+      dist/css/components/modes/cardv1.css: {}
+
+cardv2:
+  css:
+    component:
+      dist/css/components/modes/cardv2.css: {}
+
+cardv3:
+  css:
+    component:
+      dist/css/components/modes/cardv3.css: {}
+
+cardv4:
+  css:
+    component:
+      dist/css/components/modes/cardv4.css: {}
+
+cardv5:
+  css:
+    component:
+      dist/css/components/modes/cardv5.css: {}
+
+cardv6:
+  css:
+    component:
+      dist/css/components/modes/cardv6.css: {}
+
+cardv7:
+  css:
+    component:
+      dist/css/components/modes/cardv7.css: {}
+
+cardv8:
+  css:
+    component:
+      dist/css/components/modes/cardv8.css: {}
+
+event-card:
+  css:
+    component:
+      dist/css/components/modes/event-card.css: {}
+
+embed:
+  css:
+    component:
+      dist/css/components/modes/embed.css: {}
+
+compact:
+  css:
+    component:
+      dist/css/components/modes/compact.css: {}
+
+author:
+  css:
+    component:
+      dist/css/components/modes/author.css: {}
+
+teaser:
+  css:
+    component:
+      dist/css/components/modes/teaser.css: {}
+
+product-card:
+  css:
+    component:
+      dist/css/components/modes/product-card.css: {}
+
+course-card:
+  css:
+    component:
+      dist/css/components/modes/course-card.css: {}
+
+course-banner:
+  css:
+    theme:
+      dist/css/components/modes/course-banner.css: {}
+
+webinar-carousel-card:
+  css:
+    theme:
+      dist/css/components/modes/webinar-carousel-card.css: {}
+
+resources:
+  css:
+    component:
+      dist/css/components/modes/resources.css: {}
+
+# Views styles
+latest-news:
+  css:
+    layout:
+      dist/css/components/views/latest-news.css: {}
+
+podcast-and-video:
+  css:
+    layout:
+      dist/css/components/views/podcast-and-video.css: {}
+
+categorized-card:
+  css:
+    layout:
+      dist/css/components/views/categorized-card.css: {}
+
+trending-news:
+  css:
+    layout:
+      dist/css/components/views/trending-news.css: {}
+
+categorized-card-carousel:
+  css:
+    layout:
+      dist/css/components/views/categorized-card-carousel.css: {}
+
+related-stories:
+  css:
+    layout:
+      dist/css/components/views/related-stories.css: {}
+
+destination-news:
+  css:
+    layout:
+      dist/css/components/views/destination-news.css: {}
+
+location-terms:
+  css:
+    theme:
+      dist/css/components/views/location-terms.css: {}
+  js:
+    dist/js/location.js: {}
+
+search-page:
+  css:
+    theme:
+      dist/css/components/views/search-page.css: {}
+
+events:
+  css:
+    theme:
+      dist/css/components/views/events.css: {}
+
+recent-products:
+  css:
+    theme:
+      dist/css/components/views/recent-products.css: {}
+
+product-listing:
+  css:
+    theme:
+      dist/css/components/views/product-listing.css: {}
+      https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css: { type: external, minified: true }
+  js:
+    dist/js/product.js: {}
+    https://code.jquery.com/ui/1.12.1/jquery-ui.js: { type: external, minified: true }
+
+course-listing:
+  css:
+    theme:
+      dist/css/components/views/course-listing.css: {}
+
+webinar-carousel:
+  css:
+    theme:
+      dist/css/components/views/webinar-carousel.css: {}
+
+# Modules
+instagram:
+  css:
+    component:
+      dist/css/modules/instagram.css: {}
+
+menu:
+  css:
+    theme:
+      dist/css/components/navigation/navigation.css: {}
+  js:
+    dist/js/menu.js: {}
+
+sharethis:
+  css:
+    component:
+      dist/css/modules/sharethis.css: {}
+  js:
+    dist/js/sharethis.js: {}
+
+disqus:
+  css:
+    component:
+      dist/css/modules/disqus.css: {}
+  js:
+    dist/js/disqus.js: {}
+
+blocktabs:
+  css:
+    component:
+      dist/css/modules/blocktabs.css: {}
+
+responsive-tabs:
+  css:
+    theme:
+      node_modules/responsive-tabs/css/responsive-tabs.css: {}
+      dist/css/components/views/magazine-listing.css: {}
+  js:
+    node_modules/responsive-tabs/js/jquery.responsiveTabs.js: {}
+    dist/js/responsive-tabs.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+# Libraries extends
+jquery.ui:
+  css:
+    theme:
+      dist/css/base/jquery.ui.theme.css: {}
+
+drupal.dialog.off_canvas:
+  css:
+    theme:
+      dist/css/base/drupal.dialog.off_canvas.css: {}
+
+select:
+  css:
+    theme:
+      dist/css/base/select.css: {}
+  js:
+    dist/js/select.js: {}
+
+media-sidebar-text:
+  css:
+    theme:
+      dist/css/blocks/media-sidebar-text.css: {}
+
+#Pages
+login:
+  css:
+    theme:
+      dist/css/pages/login.css: {}
+  js:
+    dist/js/login.js: {}
+
+story:
+  css:
+    theme:
+      dist/css/pages/story.css: {}
+
+listing:
+  css:
+    theme:
+      dist/css/pages/listing.css: {}
+
+product:
+  css:
+    theme:
+      dist/css/pages/product.css: {}
+
+course:
+  css:
+    theme:
+      dist/css/pages/course.css: {}
+
+event:
+  css:
+    theme:
+      dist/css/pages/event/events.css: {}
+
+owl-carousal:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css: {type: external, minified: true}
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js: { type: external, minified: true }
+    dist/js/carousel.js: {}

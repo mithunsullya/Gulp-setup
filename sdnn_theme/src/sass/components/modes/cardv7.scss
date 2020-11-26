@@ -1,0 +1,34 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-card-v7 {
+  margin-bottom: 16px;
+
+  .content > .field--name-field-location-taxo {
+    margin-bottom: 16px;
+    font-family: $font-lato--semibold;
+    font-size: $font-size--s;
+  }
+
+  .title > a {
+    color: var(--color-text);
+    font-size: $font-size--xl;
+    font-family: $font-lato--semibold;
+
+    &:hover {
+      font-weight: $font--bold;
+      border-bottom: 2px solid var(--color-primary);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .field--name-field-image-media {
+      display: none;
+    }
+
+    border-bottom: 1px solid var(--color--smoky-grey);
+    padding-bottom: 16px;
+  }
+}

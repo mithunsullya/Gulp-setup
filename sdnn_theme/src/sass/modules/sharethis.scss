@@ -1,0 +1,118 @@
+// @file
+// Override share this block.
+// Used multiple !important to overide the css of share this module.
+@import "../settings/settings";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+.sharethis-inline-share-buttons {
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70px;
+    margin: 0;
+  }
+
+  position: unset;
+  margin: 10px 0 40px;
+  text-align: center !important;
+
+  .st-total {
+    @include media-breakpoint-up(md) {
+      padding: 4px 0 !important;
+    }
+
+    padding: 4px 8px;
+    font: $font-size--s $font-lato--regular !important;
+
+    .st-label {
+      font: $font-size--s $font-lato--regular !important;
+    }
+  }
+
+  .st-btn {
+    @include media-breakpoint-up(md) {
+      display: block !important;
+      max-width: 70px;
+      margin-right: 0 !important;
+    }
+
+    position: relative;
+    margin-bottom: 5px;
+    background-color: var(--color--light-grey) !important;
+
+    img {
+      visibility: hidden;
+    }
+
+    &:last-child {
+      @include media-breakpoint-up(md) {
+        margin-right: 0 !important;
+      }
+    }
+  }
+
+  .st-btn[data-network="facebook"] {
+    &::before {
+      position: absolute;
+      top: 12px;
+      right: 13px;
+      display: block;
+      visibility: visible;
+      width: 16px;
+      height: 16px;
+      content: "";
+      background: url("../../assets/facebook-black.svg") no-repeat center;
+      background-size: 16px;
+    }
+  }
+
+  .st-btn[data-network="twitter"] {
+    &::before {
+      position: absolute;
+      top: 12px;
+      right: 13px;
+      display: block;
+      visibility: visible;
+      width: 16px;
+      height: 16px;
+      content: "";
+      background: url("../../assets/twitter-black.svg") no-repeat center;
+      background-size: 16px;
+    }
+  }
+
+  .st-btn[data-network="email"] {
+    &::before {
+      position: absolute;
+      top: 12px;
+      right: 13px;
+      display: block;
+      visibility: visible;
+      width: 16px;
+      height: 16px;
+      content: "";
+      background: url("../../assets/mail-black.svg") no-repeat center;
+      background-size: 16px;
+    }
+  }
+
+  .st-btn[data-network="sharethis"] {
+    &::before {
+      position: absolute;
+      top: 12px;
+      right: 13px;
+      display: block;
+      visibility: visible;
+      width: 16px;
+      height: 16px;
+      content: "";
+      background: url("../../assets/share-black.svg") no-repeat center;
+      background-size: 16px;
+    }
+  }
+}

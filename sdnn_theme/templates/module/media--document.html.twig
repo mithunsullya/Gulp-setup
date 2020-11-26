@@ -1,0 +1,6 @@
+{% if content.field_file_label %}
+  <a href="{{ file_url(media.field_document.entity.uri.value) }}" 
+    target="_blank" class="button--link">
+    {{ content.field_file_label }} 
+  </a>
+{% endif %}

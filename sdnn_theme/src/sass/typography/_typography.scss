@@ -1,0 +1,79 @@
+// @file
+// Theme typography.
+@import "typeface";
+
+a {
+  color: var(--color-primary);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+figure {
+  display: block;
+  margin: 30px 0 40px;
+}
+
+figcaption {
+  display: block;
+  margin-top: 6px;
+  color: var(--color--grey);
+  font: $font-size--s $font-lato--regular;
+  font-style: italic;
+}
+
+p {
+  margin-bottom: 32px;
+  font-size: $font-size--base;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-lato--semibold;
+  line-height: 1.25;
+}
+
+h1 {
+  @include media-breakpoint-up(md) {
+    font: $font-size--title $font-lato--bold;
+  }
+
+  font: $font-size--xxxxl $font-lato--bold;
+}
+
+h2 {
+  @include media-breakpoint-up(md) {
+    font-size: $font-size--subtitle;
+  }
+
+  font-size: $font-size--subtitle--sm;
+}
+
+h3 {
+  @include media-breakpoint-up(md) {
+    font-size: $font-size--xxxxl;
+  }
+
+  font-size: $font-size--xxxl;
+}
+
+h4 {
+  @include media-breakpoint-up(md) {
+    font-size: $font-size--xxl;
+  }
+
+  font-family: $font-lato--regular;
+  font-size: $font-size--xl;
+}

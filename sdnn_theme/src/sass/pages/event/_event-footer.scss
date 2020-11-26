@@ -1,0 +1,23 @@
+.event__footer {
+  * {
+    color: var(--color-text);
+  }
+
+  .title {
+    font: $font--bold $font-size--base $font-lato--bold;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-lato--bold;
+  }
+
+  p {
+    margin-bottom: 12px;
+    font-family: $font-lato--medium;
+  }
+}

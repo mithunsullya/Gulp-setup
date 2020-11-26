@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Billboard block template.
+ */
+#}
+
+{% extends "block.html.twig" %}
+{% set image_url = file_url(content.field_image_media[0]['#media'].image.entity.uri.value) %}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/billboard") }}
+  {% if image_url | length > 1 %}
+    <div class="billboard" style="background-image: url({{ image_url }});">
+    {% else %}
+      <div class="billboard custom_background">
+      {% endif %}
+      <div class="billboard__wrapper">
+        {% if content.field_pre_header %}
+          {{ content.field_pre_header }}
+        {% endif %}
+        {% if content.field_title %}
+          <h1 class="title">{{ content.field_title }}</h1>
+        {% endif %}
+        {% if content.field_abstract %}
+          {{ content.field_abstract }}
+        {% endif %}
+        {% if content.field_post_header %}
+          {{ content.field_post_header }}
+        {% endif %}
+        <div class="cta_links">
+          {% if content.field_cta %}
+            {{ content.field_cta }}
+          {% endif %}
+          {% if content.field_secondary_link %}
+            {{ content.field_secondary_link }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endblock %}

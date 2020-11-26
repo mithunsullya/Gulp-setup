@@ -1,0 +1,15 @@
+@import "../../settings/settings";
+
+.node--view-mode-card-v1 {
+  .media {
+    margin-bottom: 5px;
+  }
+
+  .title {
+    font-size: $font-size--xl;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+}

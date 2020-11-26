@@ -1,0 +1,23 @@
+@import '../settings/settings';
+
+.field--name-field-cta {
+  a {
+    @include button-filled();
+
+    font: $font--bold $font-size--base $font-lato--bold;
+    padding: 8px 16px 10px;
+    margin-top: 0;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}

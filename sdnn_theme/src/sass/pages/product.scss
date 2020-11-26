@@ -1,0 +1,67 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.layout--onecol {
+  margin: unset;
+}
+
+.layout--twocol-section {
+  margin-top: 30px;
+}
+
+.node--product {
+  @include media-breakpoint-up(md) {
+    margin-bottom: 60px;
+  }
+
+  margin-top: 50px;
+  margin-bottom: 90px;
+
+  .block-field-blocknodeproducttitle {
+    @include title-variant__one;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color--smoke);
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .block-field-blocknodeproductfield-product-manufacturer {
+    font: $font--semibold $font-size--xxl $font-lato--semibold;
+    margin-bottom: 20px;
+  }
+
+  .block-field-blocknodeproductbody {
+    p {
+      font-family: $font-lato--medium;
+    }
+  }
+
+  .block-field-blocknodeproductfield-product-manufacturer-link {
+    a {
+      font: $font--bold $font-size--s $font-lato--bold;
+    }
+  }
+
+  .block-field-blocknodeproductfield-image-media {
+    margin-top: 20px;
+  }
+
+  .block-views-blockrelated-products-related-products {
+    h2 {
+      @include title_style-two;
+
+      font-family: $font-lato--medium;
+      position: unset;
+      padding: unset;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

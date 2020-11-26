@@ -1,0 +1,7 @@
+{% if (content.field_logo) and (content.field_link) %}
+  <div class="sponsor-item">
+    <a href="{{ content.field_link|render|striptags }}" target="_blank">
+      {{ content.field_logo }}
+    </a>
+  </div>
+{% endif %}

@@ -1,0 +1,18 @@
+@import "../../settings/settings";
+
+.node--view-mode-card-v4 {
+  time {
+    margin-bottom: 5px;
+    color: var(--color--grey);
+    font-size: $font-size--s;
+  }
+
+  .title {
+    font-family: $font-lato--regular;
+    font-size: $font-size--base;
+
+    a {
+      color: var(--color-text);
+    }
+  }
+}

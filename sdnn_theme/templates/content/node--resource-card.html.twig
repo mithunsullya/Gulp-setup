@@ -1,0 +1,29 @@
+{% extends "node.html.twig" %}
+
+{% block content %}
+{{ attach_library("sdnn_theme/resources") }}
+
+<div class="resources">
+  <div class="resource__media">
+    {{ content.field_image_media }} 
+    {% if node.field_course_register_link.uri|render and node.field_course_register_link.title|render %}
+      <div class="field--name-field-course-register-link">
+        <a href="{{ node.field_course_register_link.uri }}" target='_blank'> {{ node.field_course_register_link.title }}</a>
+      </div>
+    {% endif %}
+  </div>
+  <div class="content">
+    <h4 class="title">
+      {{ label }}
+    </h4>
+    {% if content.body | render %}
+      {{ content.body }}
+    {% endif %}
+
+    {% if content.field_event_sponsors | render %}
+      <h5> Brought to you by: </h5>
+      {{ content.field_event_sponsors }}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

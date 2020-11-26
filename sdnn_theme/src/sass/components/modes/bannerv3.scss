@@ -1,0 +1,51 @@
+@import "../../settings/settings";
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-banner-v3 {
+  position: relative;
+
+  .title {
+    font-size: $font-size--xxl;
+  }
+
+  .meta {
+    @include media-breakpoint-up(md) {
+      background: $gradient;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 48px 16px 16px;
+      color: var(--color--white);
+    }
+
+    width: 100%;
+
+    * {
+      @include media-breakpoint-up(md) {
+        color: var(--color--white);
+      }
+
+      color: var(--color--text);
+    }
+
+    .title {
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--xl;
+      }
+
+      font-size: $font-size--base;
+    }
+
+    time {
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--base;
+        color: var(--color--text);
+      }
+
+      font-size: $font-size--s;
+      color: var(--color--grey);
+    }
+  }
+}

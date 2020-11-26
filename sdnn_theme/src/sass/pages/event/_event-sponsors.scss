@@ -1,0 +1,38 @@
+.event__sponsors {
+  margin-bottom: 16px;
+
+  .field--name-field-event-sponsors {
+    @include media-breakpoint-up(md) {
+      padding: 0;
+    }
+
+    max-width: 730px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 20px;
+
+    .field__item {
+      @include media-breakpoint-up(md) {
+        flex: 0 0 320px;
+        margin-right: 40px;
+      }
+
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+
+      img {
+        @include media-breakpoint-up(md) {
+          max-width: 320px;
+          max-height: 170px;
+          object-fit: cover;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

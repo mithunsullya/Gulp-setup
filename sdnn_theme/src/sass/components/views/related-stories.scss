@@ -1,0 +1,44 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.view-related-stories,
+.view-related-products {
+  .view-content {
+    @include media-breakpoint-up(md) {
+      flex-wrap: nowrap;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .views-row {
+      @include media-breakpoint-up(md) {
+        flex: 0 0 33%;
+        max-width: calc(33% - 6px);
+        margin-right: 12px;
+        margin-bottom: unset;
+      }
+
+      flex: 0 0 100%;
+      margin-bottom: 20px;
+      background: var(--color-text);
+
+      a {
+        font-family: $font-lato--bold;
+      }
+    }
+  }
+}
+
+// Used !important to override the max-width (To fit 4 cards in a row).
+
+.view-related-products > .view-content {
+  .views-row {
+    @include media-breakpoint-up(md) {
+      flex: 0 0 25%;
+      max-width: calc(25% - 9px) !important;
+    }
+  }
+}

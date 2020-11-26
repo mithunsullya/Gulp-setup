@@ -1,0 +1,17 @@
+{% extends "page.html.twig" %}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/select") }}
+	{{ attach_library("sdnn_theme/search") }}
+
+	<div class="container l-two-col">
+		<div class="row">
+			<div class="col-sm-8">
+				{{ page.content }}
+			</div>
+			<aside class="col-sm-4">
+				{{ page.sidebar }}
+			</aside>
+		</div>
+	</div>
+{% endblock %}

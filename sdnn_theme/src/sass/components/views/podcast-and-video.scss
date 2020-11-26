@@ -1,0 +1,59 @@
+// @file
+// podcast and video view component
+
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.view-featured-podcast-videos {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  > .view-content {
+    @include media-breakpoint-up(md) {
+      flex: 0 0 50%;
+      padding-right: 16px;
+      margin-bottom: 10px;
+    }
+
+    margin-bottom: 32px;
+  }
+
+  .title {
+    a {
+      font-family: $font-lato--semibold;
+    }
+  }
+
+  .attachment-after {
+    @include media-breakpoint-up(md) {
+      flex: 0 0 50%;
+      padding-left: 16px;
+    }
+
+    .view-content {
+      display: flex;
+      flex: unset;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-right: 0;
+
+      .views-row {
+        @include media-breakpoint-up(md) {
+          flex: 0 0 50%;
+          max-width: calc(50% - 14px);
+        }
+
+        margin-bottom: 32px;
+        width: 100%;
+
+        &:last-child {
+          margin-bottom: unset;
+        }
+      }
+    }
+  }
+}

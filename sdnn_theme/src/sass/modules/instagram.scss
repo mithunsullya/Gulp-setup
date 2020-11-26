@@ -1,0 +1,100 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.instagram__wrapper {
+  @include media-breakpoint-up(md) {
+    max-width: 520px;
+  }
+
+  .instagram {
+    padding: 22px;
+    background-color: var(--color--light-grey);
+
+    .instagram-feeds {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+
+      .instagram-profile {
+        display: flex;
+        flex: 0 0 50%;
+        flex-direction: row;
+        align-items: center;
+
+        .profile__logo {
+          img {
+            @include media-breakpoint-up(md) {
+              width: 50px;
+              height: 50px;
+            }
+
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+          }
+        }
+
+        .profile__name {
+          @include media-breakpoint-up(md) {
+            font: $font-size--l $font-lato--bold;
+          }
+
+          padding-left: 14px;
+          font: $font-size--xxs $font-lato--bold;
+        }
+      }
+
+      .instagram__wrapper .instagram .instagram-feeds .instagram__logo {
+        @include media-breakpoint-up(md) {
+          flex: 0 0 170px;
+        }
+
+        flex: 0 0 110px;
+
+        img {
+          @include media-breakpoint-up(md) {
+            height: 34px;
+          }
+
+          height: 22px;
+        }
+      }
+    }
+  }
+
+  .instagram-feed {
+    .instagram_profile {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        content: ' ';
+        background: url('../../assets/images/plus-icon.svg') no-repeat center;
+        background-size: 12px;
+      }
+    }
+
+    .instagram__wrapper .instagram-feed .instagram_gallery {
+      @include media-breakpoint-up(md) {
+        height: auto;
+      }
+
+      height: 292px;
+
+      .instagram__wrapper .instagram-feed .instagram_gallery img {
+        width: 100% !important;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{% extends "node.html.twig" %}
+{% set image_url = file_url(content.field_event_hotel_media[0]['#media'].image.entity.uri.value) %}
+
+{% block content %}
+  {{ attach_library("sdnn_theme/event-card") }}
+  <div class="event_card" style="background-image: url({{ image_url }});">
+    <h4 class="title">
+      {{ content.field_location_taxo }}
+    </h4>
+    <div class="subtitle">
+      {{ label }}
+    </div>
+    <span class="date">
+      {{content.field_event_start_date}}&nbsp;&ndash;&nbsp;{{content.field_event_end_date}}
+    </span>
+    <div class="cta">
+      <a href="{{ url }}">Inquire Now</a>
+    </div>
+  </div>
+{% endblock %}

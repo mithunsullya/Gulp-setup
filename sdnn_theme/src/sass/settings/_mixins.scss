@@ -1,0 +1,120 @@
+@mixin title_style() {
+  position: relative;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font: $font--bold $font-size--subtitle--sm $font-lato--bold;
+}
+
+@mixin bp-small() {
+  @media only screen and (max-width: 330px) {
+    font-size: 24px;
+  }
+}
+
+// Title of the componetns(variant 1).
+@mixin title-variant__one() {
+  @include title_style();
+  @include bp-small();
+
+  @include media-breakpoint-up(md) {
+    border-bottom: 1px solid var(--color--smoke);
+    font: $font--bold $font-size--subtitle $font-lato--bold;
+    display: block;
+
+    &::after {
+      visibility: hidden;
+    }
+  }
+
+  display: flex;
+  word-break: keep-all;
+  align-items: center;
+
+  &::after {
+    margin-left: 10px;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    z-index: -1;
+    background-color: var(--color--smoke);
+  }
+}
+
+// Title of the componetns(variant 2).
+@mixin title-variant__two() {
+  @include title_style();
+  @include bp-small();
+
+  @include media-breakpoint-up(md) {
+    font: $font--bold $font-size--subtitle $font-lato--bold;
+  }
+
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-left: 30px;
+    content: '';
+    border-top: 1px solid var(--color--smoke);
+  }
+}
+
+@mixin button_filled() {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  color: var(--color--white);
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  font: $font--bold $font-size--s $font-lato--bold;
+}
+
+@mixin link_type_one() {
+  a {
+    transition: $transition-base;
+    color: var(--color--text);
+    font: $font--bold $font-size--xl $font-lato--bold;
+    line-height: 1.5;
+
+    &:hover {
+      transition: $transition-short;
+      border-bottom: 2px solid var(--color-primary);
+    }
+  }
+}
+
+//title with underline
+@mixin title_style-one() {
+  text-transform: uppercase;
+  color: var(--color--text);
+  border-bottom: 1px solid var(--color--smoke);
+  font: $font--regular ($font-size--xxl)+1px $font-lato--semibold;
+}
+
+//title with underline throughout the block.
+@mixin title_style-two() {
+  @include title_style-one();
+
+  width: fit-content;
+  font: $font--regular ($font-size--xxxl)-1px $font-lato--semibold;
+}
+
+@mixin bp-large {
+  @media only screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
+.title-variant__four {
+  @include title_style-two();
+}
+
+.title-variant__three {
+  @include title_style-one();
+}

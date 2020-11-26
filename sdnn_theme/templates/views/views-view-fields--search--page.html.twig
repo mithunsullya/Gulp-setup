@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display search page.
+ */
+#}
+
+{{ attach_library("sdnn_theme/search-page") }}
+<div class="search-content-result">
+  <div class="search-content-result__left">
+    <div class="content-date">
+      <p>{{ fields.created.content }}</p>
+    </div>
+    <h3 class="content-title">
+      {{ fields.title.content }}
+    </h3>
+    {% if fields.body.content|render|striptags|trim %}
+      <div class="content-body">
+        <p>{{ fields.body.content }}</p>
+      </div>
+    {% endif %}
+    <div class="content-type">
+      {{ fields.type.content}}
+    </div>
+  </div>
+
+  {% if fields.field_image_media.content %}
+    <div class="search-content-result__right">
+      {{ fields.field_image_media.content }}
+    </div>
+  {% endif %}
+</div>

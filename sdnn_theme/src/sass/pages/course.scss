@@ -1,0 +1,142 @@
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.node--course {
+  .layout--onecol {
+    margin-bottom: 30px;
+  }
+
+  .block-field-blocknodecoursetype {
+    @include title-variant__one;
+
+    &::after {
+      display: none;
+    }
+
+    border-bottom: 1px solid var(--color--smoke);
+    padding-bottom: 5px;
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 10px;
+    }
+  }
+
+  .block-field-blocknodecoursetitle {
+    font: $font--semibold $font-size--xxl $font-lato--semibold;
+
+    @include media-breakpoint-up(md) {
+      padding-right: 50%;
+    }
+  }
+
+  .block-field-blocknodecoursefield-image-media {
+    margin: 20px 0;
+
+    @include media-breakpoint-up(md) {
+      img {
+        width: 380px;
+        height: 310px;
+        margin-left: 30px;
+        object-fit: cover;
+        float: right;
+      }
+    }
+  }
+
+  .block-field-blocknodecoursefield-course-register-link {
+    @include button_filled;
+
+    margin: 16px 0;
+
+    a {
+      font-size: $font-size--l;
+      color: var(--color--white);
+    }
+  }
+
+  .block-field-blocknodecoursebody {
+    @include media-breakpoint-up(md) {
+      min-height: 300px;
+    }
+
+    li {
+      display: flex;
+
+      &::before {
+        content: '\25A0';
+        color: var(--color-primary);
+        font-weight: bold;
+        display: inline-block;
+        width: 10px;
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+
+    p,
+    li {
+      font: $font--medium $font-size--base $font-lato--medium;
+      line-height: 30px;
+
+      a {
+        color: var(--color--pale-red);
+        font-style: italic;
+        font-weight: $font--semibold;
+      }
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+    }
+  }
+
+  .block-field-blocknodecoursefield-course-presenter {
+    text-align: center;
+
+    .field--name-field-course-presenter {
+      > .field__item {
+        margin: 20px 0;
+        background-color: var(--color--light-grey);
+        padding: 20px 30px;
+        font-family: $font-lato--light;
+
+        @include media-breakpoint-up(md) {
+          padding: 30px 150px 5px 150px;
+        }
+
+        .field {
+          font-size: $font-size--l;
+        }
+
+        .field--name-field-person-photo {
+          display: inline-block;
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 20px 0;
+        }
+
+        .field--name-field-person-bio {
+          margin-top: 30px;
+
+          &::before {
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 150px;
+            transform: translate(-50%, -15px);
+            background-color: var(--color-primary);
+          }
+        }
+
+        &::before {
+          content: 'Featured Presenter';
+          font: $font--semibold $font-size--xxxl $font-lato--semibold;
+        }
+      }
+    }
+  }
+}

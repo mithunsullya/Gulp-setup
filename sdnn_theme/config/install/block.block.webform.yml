@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.subscription_form
+  module:
+    - system
+    - webform
+  theme:
+    - sdnn_theme
+id: webform
+theme: sdnn_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  provider: webform
+  label_display: '0'
+  webform_id: subscription_form
+  default_data: ''
+  redirect: false
+visibility:
+  request_path:
+    id: request_path
+    pages: "/taxonomy/term/*\r\n/user/*\r\n/education/courses/courses/*\r\n/trending-stories"
+    negate: false

@@ -1,0 +1,30 @@
+// @file
+// Categorized card view component
+
+@import "../../settings/settings";
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.view-stories-w-banner {
+  @include media-breakpoint-up(md) {
+    padding: 0;
+  }
+
+  .views-row {
+    .views-field-title {
+      margin-bottom: 20px;
+
+      a {
+        transition: text-shadow 0.3s;
+        color: var(--color--smoky-black);
+        font: $font-size--l $font-lato--semibold;
+
+        &:hover {
+          border-bottom: 2px solid var(--color-primary);
+          text-shadow: 0.5px 0.5px var(--color-text);
+        }
+      }
+    }
+  }
+}

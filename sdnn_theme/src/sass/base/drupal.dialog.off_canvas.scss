@@ -1,0 +1,64 @@
+@import "../settings/settings";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+// Forcefully override the position.
+.ui-dialog-off-canvas {
+  left: 1040px;
+  width: 400px !important;
+  font-family: $font-lato--regular;
+
+  .form-search {
+    width: 100%;
+    padding: 10px 18px !important;
+  }
+
+  .ui-dialog-title {
+    max-width: 100% !important;
+  }
+}
+
+> div > a {
+  text-transform: uppercase;
+  font-family: $font-lato--bold;
+  font-size: $font-size--xs;
+}
+
+#drupal-off-canvas {
+  .inline-block-create-button {
+    margin-top: -16px;
+    padding: 16px 0 16px 40px !important;
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration: none;
+  }
+
+  details > summary {
+    text-transform: uppercase;
+    color: var(--color--text);
+    font-family: $font-lato--bold;
+    font-size: $font-size--xs;
+  }
+
+  .details-wrapper {
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    a {
+      display: block;
+      margin-bottom: 5px !important;
+      color: var(--color--white);
+    }
+  }
+
+  .inline-block-list {
+    a {
+      display: block;
+      margin-bottom: 5px !important;
+      color: var(--color--white);
+    }
+  }
+}

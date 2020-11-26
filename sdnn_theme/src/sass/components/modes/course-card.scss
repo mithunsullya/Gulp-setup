@@ -1,0 +1,25 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-course-card,
+.node--view-mode-webinar-card {
+  .title {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: $font-lato--semibold;
+
+    a,
+    div {
+      @include media-breakpoint-up(md) {
+        font-size: $font-size--s;
+      }
+
+      color: var(--color--white);
+      line-height: 25px;
+      font-size: $font-size--base;
+    }
+  }
+}

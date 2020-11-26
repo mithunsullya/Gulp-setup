@@ -1,0 +1,32 @@
+//@file
+// Magazine block styling.
+
+@import '../settings/settings';
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.magazine_block {
+  padding: 25px 0;
+  border-top: 1px solid var(--color--smoke);
+  border-bottom: 1px solid var(--color--smoke);
+  flex-wrap: nowrap;
+  display: flex;
+
+  &__image {
+    flex: 0 0 60%;
+    margin-right: 10px;
+
+    @include media-breakpoint-up(md) {
+      margin-right: 16px;
+    }
+  }
+
+  &__links {
+    @include link_type_one();
+
+    div {
+      margin-bottom: 10px;
+    }
+  }
+}

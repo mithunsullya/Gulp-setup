@@ -1,0 +1,75 @@
+@import "../settings/settings";
+@import '../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+
+  .active {
+    display: block;
+  }
+
+  .select-hidden {
+    display: none;
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 45px;
+  z-index: 10;
+  background-color: var(--color--whitish-grey);
+  min-width: 180px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.18);
+
+  li {
+    display: block;
+    padding: 10px 40px 10px 10px;
+    color: var(--color--smoky-black);
+
+    &[rel=''] {
+      display: none;
+    }
+
+    &::before {
+      width: 10px;
+      height: 10px;
+      content: '';
+      border: 1px solid var(--color--smoky-black);
+      display: inline-block;
+      margin-right: 8px;
+    }
+  }
+
+  li.active {
+    &::before {
+      background-color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+  }
+}
+
+.select-label {
+  @include media-breakpoint-up(md) {
+    padding: 10px 70px 10px 10px;
+  }
+
+  color: var(--color--grey);
+  padding: 10px 24px 10px 10px;
+  border-right: 1px solid var(--color--smoke);
+
+  &::after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    content: '';
+    background: url('../../assets/down.svg') no-repeat center;
+    background-size: 12px;
+  }
+}

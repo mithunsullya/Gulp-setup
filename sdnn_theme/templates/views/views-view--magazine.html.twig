@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Theme override to display magazine view.
+ */
+#}
+
+{{ attach_library("sdnn_theme/responsive-tabs") }}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+<div{{attributes.addClass(classes)}}>
+  <div id="magazineTabs" class="magazine-tabs">
+    <ul>
+      {% for row in rows %}
+        <li>
+          <a href="#tab-{{ loop.index }}">
+            {{ rows[(loop.index)-1]['#title'] }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% for row in rows %}
+      <div id="tab-{{ loop.index }}">
+        <div class="magazine_cover_wrapper">
+          {{row}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,56 @@
+.view-latest-podcasts,
+.view-latest-videos,
+.view-stories-hero-carousel {
+  .node--view-mode-banner-v1 .title {
+    margin-top: 50px;
+
+    a {
+      position: relative;
+      font-family: $font-lato--bold;
+    }
+  }
+
+  .slick-dots {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: 375px) {
+      top: 250px;
+    }
+
+    @media screen and (min-width: 425px) {
+      top: 275px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      top: 430px;
+    }
+
+    li {
+      margin: 0 3px;
+    }
+
+    button {
+      display: block;
+      width: 30px;
+      height: 3px;
+      padding: 0;
+      transition: $transition-base;
+      text-indent: -9999px;
+      border: none;
+      outline: none;
+      background-color: var(--color--grey);
+    }
+
+    li.slick-active button {
+      transition: $transition-base;
+      background-color: var(--color-primary);
+    }
+  }
+}

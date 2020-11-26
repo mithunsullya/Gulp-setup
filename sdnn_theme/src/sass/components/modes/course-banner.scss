@@ -1,0 +1,57 @@
+@import '../../settings/settings';
+@import '../../../../node_modules/bootstrap/scss/mixins/breakpoints';
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+
+.node--view-mode-course-banner {
+  .course_banner {
+    text-align: center;
+
+    > .banner_image {
+      min-height: 450px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .title {
+      color: var(--color--white);
+      text-transform: capitalize;
+      padding: 30px;
+      position: relative;
+      font-family: $font-lato--heavy;
+
+      @include media-breakpoint-up(md) {
+        padding: 75px;
+        margin: 0 100px;
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+      padding: 0 20px;
+
+      @include media-breakpoint-up(md) {
+        padding: 0 200px;
+      }
+
+      p {
+        font: $font--regular $font-size--l $font-lato--light;
+        margin: 2rem auto;
+        max-width: 80%;
+
+        @include media-breakpoint-up(md) {
+          max-width: 60%;
+        }
+      }
+
+      a {
+        @include button_filled;
+
+        margin: unset;
+      }
+    }
+  }
+}

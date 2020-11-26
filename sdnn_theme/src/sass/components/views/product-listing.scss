@@ -1,0 +1,105 @@
+@import "../../settings/settings";
+@import "../../../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+
+.view-product-card {
+  .view-content {
+    @include media-breakpoint-up(md) {
+      flex-wrap: nowrap;
+      max-width: calc(100% - 16px);
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .views-row {
+      @include media-breakpoint-up(md) {
+        flex: 0 0 25%;
+        margin-bottom: unset;
+        max-width: calc(25% - 8px);
+        margin-right: 16px;
+      }
+
+      flex: 0 0 100%;
+      margin-bottom: 30px;
+      background: var(--color-text);
+
+      &:hover {
+        background: var(--color-primary);
+        transition: $transition-short;
+      }
+
+      &:last-child {
+        @include media-breakpoint-up(md) {
+          margin-bottom: unset;
+        }
+
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.block-sdnn-blocks-products {
+  > h2 {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+
+    display: block;
+  }
+
+  .product-list__item {
+    @include media-breakpoint-up(md) {
+      margin-bottom: 90px;
+      display: block;
+    }
+
+    display: none;
+
+    h2 {
+      @include title_style-one();
+
+      display: inline-block;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+  }
+
+  .product-list__item.active {
+    display: block;
+  }
+
+  .ui-selectmenu-button.ui-button {
+    background: url('../../../assets/dropdown.svg') no-repeat calc(100% - 10px) !important;
+    background-size: 18px !important;
+    padding: 8px 12px;
+    font-family: $font-helvitica-regular;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 24px;
+
+    .ui-icon {
+      display: none;
+    }
+  }
+
+  .ui-selectmenu-text {
+    font-size: $font-size--base;
+  }
+}
+
+.ui-selectmenu-menu {
+  ul {
+    height: 300px;
+
+    .ui-menu-item {
+      padding: 4px !important;
+
+      .ui-state-active {
+        background-color: var(--color-primary) !important;
+      }
+    }
+  }
+}
